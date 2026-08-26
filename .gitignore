@@ -3,3 +3,4 @@ _site
 .jekyll-cache
 .jekyll-metadata
 init_git.ps1
+update-sha.js

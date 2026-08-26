@@ -1,0 +1,561 @@
+/**
+ * RSVPKit Feed Kit Widget Styles
+ * Standalone response feed with vertical and horizontal (slider) modes
+ *
+ * Uses :where() wrapper for customizable properties (colors, sizes, etc.)
+ * so Elementor-generated control selectors ALWAYS override these defaults
+ * regardless of CSS load order. :where() has 0 specificity.
+ *
+ * Layout properties (display, flex, position, etc.) use normal selectors
+ * since they are not customizable via Elementor controls.
+ */
+
+/* ======================
+   CONTAINER
+   ====================== */
+.rsvpkit-feedkit-container {
+    position: relative;
+    width: 100%;
+}
+
+.rsvpkit-feedkit-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* ======================
+   VERTICAL MODE (LIST)
+   ====================== */
+.rsvpkit-feedkit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.rsvpkit-feedkit-list.scrollable {
+    overflow-y: auto;
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+/* Show scrollbar on hover (Firefox) */
+.rsvpkit-feedkit-list.scrollable:hover {
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+/* WebKit (Chrome, Safari, Edge) — hidden by default */
+.rsvpkit-feedkit-list.scrollable::-webkit-scrollbar {
+    width: 4px;
+}
+
+.rsvpkit-feedkit-list.scrollable::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.rsvpkit-feedkit-list.scrollable::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Show scrollbar on hover (WebKit) */
+.rsvpkit-feedkit-list.scrollable:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.rsvpkit-feedkit-list.scrollable:hover::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ======================
+   HORIZONTAL MODE (SLIDER)
+   ====================== */
+/* Base layout (no arrows) — simple stack */
+.mode-horizontal {
+    display: block;
+}
+
+/* With arrows — use 3-column grid */
+.mode-horizontal.has-arrows {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: 1fr auto;
+    column-gap: var(--feedkit-gap, 12px);
+    row-gap: 8px;
+    align-items: center;
+}
+
+.mode-horizontal.has-arrows .rsvpkit-feedkit-arrow-prev {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.mode-horizontal.has-arrows .rsvpkit-feedkit-wrapper {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.mode-horizontal.has-arrows .rsvpkit-feedkit-arrow-next {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.mode-horizontal .rsvpkit-feedkit-wrapper {
+    overflow: hidden;
+    min-width: 0;
+}
+
+.mode-horizontal .rsvpkit-feedkit-dots {
+    grid-column: 1 / -1;
+    grid-row: 2;
+}
+
+.rsvpkit-feedkit-slider {
+    display: flex;
+    will-change: transform;
+}
+
+.mode-horizontal .rsvpkit-feedkit-item {
+    min-width: 0;
+}
+
+/* ======================
+   RESPONSE ITEM
+   —— :where() for Elementor-overridable defaults
+   ====================== */
+/* Layout (not customizable) */
+.rsvpkit-feedkit-item {
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+}
+
+/* Customizable defaults — :where() = 0 specificity so Elementor always wins */
+:where(.rsvpkit-feedkit-item) {
+    background-color: #f1f5f9;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: none;
+}
+
+.rsvpkit-feedkit-item:hover {
+    transform: translateY(-2px);
+}
+
+/* Header (Avatar + Meta + Badge)
+   Always flex-wrap so badge drops to new row when space is tight,
+   whether from CSS media queries or narrow Elementor editor preview */
+.rsvpkit-feedkit-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    margin-bottom: 12px;
+}
+
+/* Avatar — layout (not customizable) */
+.rsvpkit-feedkit-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-weight: 600;
+    order: 1;
+}
+
+/* Avatar — customizable defaults */
+:where(.rsvpkit-feedkit-avatar) {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #6366f1;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* Meta (Name + Date) — takes remaining space, forces badge to wrap when narrow */
+.rsvpkit-feedkit-meta {
+    flex: 1 1 0;
+    min-width: 150px;
+    order: 2;
+}
+
+/* Name — layout */
+.rsvpkit-feedkit-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 2px;
+}
+
+/* Name — customizable defaults */
+:where(.rsvpkit-feedkit-name) {
+    font-weight: 600;
+    font-size: 15px;
+    color: #1e293b;
+}
+
+/* Date — customizable defaults */
+:where(.rsvpkit-feedkit-date) {
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* Status Badge — layout */
+.rsvpkit-feedkit-badge {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    order: 3;
+}
+
+/* Status Badge — customizable defaults */
+:where(.rsvpkit-feedkit-badge) {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+:where(.rsvpkit-feedkit-badge.attending) {
+    background-color: #10b981;
+    color: #ffffff;
+}
+
+:where(.rsvpkit-feedkit-badge.not-attending) {
+    background-color: #ef4444;
+    color: #ffffff;
+}
+
+/* Message — customizable defaults */
+.rsvpkit-feedkit-message {
+    word-wrap: break-word;
+}
+
+:where(.rsvpkit-feedkit-message) {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+}
+
+/* Selected Events */
+.rsvpkit-feedkit-events {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+:where(.rsvpkit-feedkit-event-badge) {
+    display: inline-block;
+    padding: 3px 8px;
+    background-color: #eef2ff;
+    color: #4338ca;
+    font-size: 11px;
+    font-weight: 500;
+    border-radius: 8px;
+    border: 1px solid #c7d2fe;
+}
+
+/* Empty State */
+.rsvpkit-feedkit-empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: #64748b;
+    font-style: italic;
+}
+
+/* ======================
+   NAVIGATION ARROWS
+   ====================== */
+/* Layout */
+.rsvpkit-feedkit-arrow {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+/* Customizable defaults */
+:where(.rsvpkit-feedkit-arrow) {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #94a3b8;
+    box-shadow: none;
+}
+
+.rsvpkit-feedkit-arrow:hover {
+    color: #64748b;
+    transform: scale(1.1);
+}
+
+.rsvpkit-feedkit-arrow:active {
+    transform: scale(0.95);
+}
+
+.rsvpkit-feedkit-arrow:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    background-color: #94a3b8;
+}
+
+.rsvpkit-feedkit-arrow svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 2.5;
+}
+
+/* Arrow positioning */
+.rsvpkit-feedkit-arrow-prev,
+.rsvpkit-feedkit-arrow-next {
+    position: relative;
+}
+
+/* ======================
+   PAGINATION DOTS
+   ====================== */
+/* Layout */
+.rsvpkit-feedkit-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 0;
+    width: 100%;
+}
+
+.rsvpkit-feedkit-dot {
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* Customizable defaults */
+:where(.rsvpkit-feedkit-dot) {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #cbd5e1;
+    box-shadow: none;
+}
+
+.rsvpkit-feedkit-dot:hover {
+    background-color: #94a3b8;
+    transform: scale(1.15);
+}
+
+:where(.rsvpkit-feedkit-dot.active) {
+    background-color: #6366f1;
+    border-color: rgba(99, 102, 241, 0.3);
+    transform: scale(1.3);
+}
+
+/* ======================
+   NEW ENTRY ANIMATION
+   ====================== */
+@keyframes feedkit-fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.rsvpkit-feedkit-item.new-entry {
+    animation: feedkit-fadeIn 0.5s ease-out;
+}
+
+/* RTL direction is handled via JS autoplay direction, not CSS flex-direction */
+
+/* ======================
+   RESPONSIVE
+   ====================== */
+/* Item widths are handled dynamically by JS updateSlider() */
+/* Arrow/dot sizes are handled by Elementor responsive controls */
+
+@media (max-width: 768px) {
+    .rsvpkit-feedkit-dots {
+        padding: 12px 0;
+    }
+}
+
+/* ======================
+   DISABLED ARROW STATE
+   ====================== */
+.rsvpkit-feedkit-arrow.rsvpkit-nav-disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: #94a3b8;
+    /* Default fallback */
+    box-shadow: none;
+    transform: none;
+}
+
+/* ======================
+   FEED NAVIGATION CONTROLS
+   (Load More / Pagination)
+   ====================== */
+.rsvpkit-feedkit-nav-controls {
+    display: flex;
+    justify-content: center;
+    padding: 16px 0 4px;
+}
+
+/* Load More Button — layout */
+.rsvpkit-feedkit-load-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 140px;
+}
+
+/* Load More Button — customizable defaults */
+:where(.rsvpkit-feedkit-load-more) {
+    padding: 10px 28px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.rsvpkit-feedkit-load-more:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+    color: #1e293b;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.rsvpkit-feedkit-load-more:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.rsvpkit-feedkit-load-more.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.rsvpkit-feedkit-load-more.loading::after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border: 2px solid #cbd5e1;
+    border-top-color: #6366f1;
+    border-radius: 50%;
+    animation: feedkit-spin 0.6s linear infinite;
+}
+
+@keyframes feedkit-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Pagination Container */
+.rsvpkit-feedkit-pagination {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Prev / Next Buttons — layout */
+.rsvpkit-feedkit-page-prev,
+.rsvpkit-feedkit-page-next {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Prev / Next Buttons — customizable defaults */
+:where(.rsvpkit-feedkit-page-prev),
+:where(.rsvpkit-feedkit-page-next) {
+    padding: 6px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.rsvpkit-feedkit-page-prev:hover,
+.rsvpkit-feedkit-page-next:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+    color: #1e293b;
+}
+
+.rsvpkit-feedkit-page-prev:disabled,
+.rsvpkit-feedkit-page-next:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Page Number Buttons */
+.rsvpkit-feedkit-page-numbers {
+    display: flex;
+    gap: 4px;
+}
+
+/* Page Number — layout */
+.rsvpkit-feedkit-page-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+/* Page Number — customizable defaults */
+:where(.rsvpkit-feedkit-page-num) {
+    min-width: 32px;
+    min-height: 32px;
+    padding: 4px 8px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.rsvpkit-feedkit-page-num:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+:where(.rsvpkit-feedkit-page-num.active) {
+    background-color: #6366f1;
+    border-color: #6366f1;
+    color: #ffffff;
+    cursor: default;
+}
+
+/* Loading State for Page Transitions */
+.rsvpkit-feedkit-list.feedkit-loading {
+    opacity: 0.5;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
