@@ -421,7 +421,19 @@
                     handleSubmissionResponse(response, $form, $messages);
                 },
                 error: function (xhr, status, error) {
-                    showMessage($messages, rsvpkit_ajax.messages.error, 'error');
+                    // 1. Siapkan pesan default (fallback)
+                    let errorMessage = rsvpkit_ajax.messages.error;
+
+                    // 2. Coba ekstrak pesan spesifik dari backend jika ada
+                    if (xhr && xhr.responseText) {
+                        try {
+                            const errorResponse = JSON.parse(xhr.responseText);
+                            if (errorResponse && errorResponse.message) {
+                                errorMessage = errorResponse.message; // Timpa dengan pesan dari server Anda
+                            }
+                        } catch (e) {}
+                    }
+                    showMessage($messages, errorMessage, 'error');
                     if (window.RSVPKIT_DEBUG) console.error('RSVP submission error:', error);
                 },
                 complete: function () {
