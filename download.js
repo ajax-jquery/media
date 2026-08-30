@@ -8,7 +8,7 @@ const IMAGE_EXTENSIONS = []; //[cite: 1]
 // Contoh HTML yang berisi gambar, CSS, JS, font, audio, hingga video
 const htmlContent = `
 <!-- Font (Tag Link Preload) -->
-<link rel="preload" href="https://aset.walimatul.id/uploads/video/Motion_Garden_05_1777664475.mp4" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://walimatul.id/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
 
 
 `;
