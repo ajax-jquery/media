@@ -1,7 +1,7 @@
 function getComments_SAIC(post_id, num_comments, num_get_comments, order_comments,csrf_token,template_version) {
     var status = jQuery("#saic-comment-status-" + post_id)
       , $container_comments = jQuery("ul#saic-container-comment-" + post_id);
-    return num_comments > 0 && jQuery.ajax({
+    return jQuery.ajax({
         type: "POST",
         dataType: "html",
         url: WDS_RSVP.ajaxurl,
@@ -262,3 +262,48 @@ jQuery(document).ready((function($) {
     ))
 }
 ));
+ document.addEventListener('DOMContentLoaded', () => {
+                const formGift = document.getElementById('form-konfirmasi-gift');
+                
+                if (formGift) {
+                    // Sinkronisasi CSRF token
+              
+
+                    formGift.addEventListener('submit', async (e) => {
+                        e.preventDefault();
+                        const btn = document.getElementById('btn-submit-gift');
+                        const originalHTML = btn.innerHTML;
+                        
+                        btn.innerHTML = '<span class="elementor-button-content-wrapper"><span class="elementor-button-text">Memproses...</span></span>';
+                        btn.style.opacity = '0.7';
+                        btn.disabled = true;
+
+                        const formData = new FormData(formGift);
+                        
+                        try {
+                            const response = await fetch(WDS_RSVP.ajaxurl, {
+                                method: 'POST',
+                                body: formData
+                            });
+                            
+                            const result = await response.json();
+                            
+                            if (result.success && result.data && result.data.data && result.data.data.redirect_url) {
+                                alert('Upload berhasil! Anda akan dialihkan ke WhatsApp untuk konfirmasi.');
+								formGift.reset();
+                                window.location.href = result.data.data.redirect_url;
+                            } else {
+                                const errorMsg = result.data && result.data.message ? result.data.message : (result.message || 'Gagal mengirim konfirmasi.');
+                                alert(errorMsg);
+                            }
+                        } catch (error) {
+                            alert('Terjadi kesalahan jaringan atau koneksi.');
+                            console.error('Error Konfirmasi Gift:', error);
+                        } finally {
+                            btn.innerHTML = originalHTML;
+                            btn.style.opacity = '1';
+                            btn.disabled = false;
+                        }
+                    });
+                }
+            });
