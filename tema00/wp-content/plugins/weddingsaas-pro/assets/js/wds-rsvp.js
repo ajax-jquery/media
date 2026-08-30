@@ -152,7 +152,7 @@ jQuery(document).ready((function($) {
           , num_comments = linkVars.comments
           , num_get_comments = linkVars.get
           , order_comments = linkVars.order
-		  ,csrf_token = linkVars.csrf_token,
+		  ,csrf_token = linkVars.csrf_token
 		  ,template_version=linkVars.template_version;
         $("#saic-wrap-comment-" + post_id).slideToggle(200);
         var container_comment = $("#saic-container-comment-" + post_id);
