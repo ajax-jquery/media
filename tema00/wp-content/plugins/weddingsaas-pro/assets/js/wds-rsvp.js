@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    // 1. Cari elemen tombol/link RSVP di halaman
+ 
     const rsvpLink = document.querySelector('a.saic-link');
     
     if (rsvpLink) {
