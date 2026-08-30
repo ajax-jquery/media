@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded",async()=>{const t=document.querySelector("a.saic-link");if(t){const e=t.getAttribute("href"),s=new URLSearchParams(e.substring(e.indexOf("?"))).get("post_id");if(s)try{const n=await fetch(`/tema00/wp-admin/admin-ajax.php?action=rsvpkit_get_responses&post_id=${s}`),a=await n.json();if(a.success&&a.statistics){const s=a.statistics.total_responses,n=t.querySelector("span");n&&(n.textContent=s);const i=e.replace(/comments=\d+/,`comments=${s}`);t.setAttribute("href",i),parseInt(s)>0&&t.classList.contains("auto-load-true")&&"undefined"!=typeof jQuery&&(jQuery(t).trigger("click"),setTimeout(function(){jQuery(t).trigger("click")},500))}}catch(t){console.error("Gagal mengambil total komentar:",t)}}});
+			
 document.addEventListener('DOMContentLoaded', () => {
                 const formGift = document.getElementById('form-konfirmasi-gift');
                 
