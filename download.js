@@ -7,26 +7,12 @@ const ALLOWED_DOMAINS = ["assets.weddingsaas.id","walimatul.id","web.galeriundan
 const IMAGE_EXTENSIONS = []; //[cite: 1]
 // Contoh HTML yang berisi gambar, CSS, JS, font, audio, hingga video
 const htmlContent = `
-<!-- CSS (Stylesheets) -->
-<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/lib/animations/styles/fadeInRight.min.css?ver=4.2.3" />
-<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor-pro/assets/css/widget-nested-carousel.min.css?ver=4.2.2" />
-<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/css/widget-image-carousel.min.css?ver=4.2.3" />
-<link rel="stylesheet" href="https://walimatul.id/wp-content/uploads/elementor/css/post-5263.css?ver=1788067475" />
-<link rel="stylesheet" href="https://walimatul.id/wp-content/uploads/elementor/google-fonts/css/montserrat.css?ver=1742664708" />
-
-<!-- Gambar (Images) -->
-<img src="https://walimatul.id/wp-content/uploads/2024/06/Picture1.svg" alt="Picture 1" />
-<img src="https://walimatul.id/wp-content/uploads/2024/03/Asset-6.svg" alt="Asset 6" />
-<img src="https://walimatul.id/wp-content/uploads/2024/03/Asset-6.svg" alt="Asset 6" />
-
-<!-- JavaScript -->
-<script src="https://walimatul.id/wp-content/plugins/elementor-pro/assets/js/nested-carousel.659b0373371215e60dab.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/video.86d44e46e43d0807e708.bundle.min.js"></script>
-
-<!-- JSON (Biasanya untuk animasi Lottie, disematkan sebagai preload fetch) -->
-<link rel="preload" href="https://walimatul.id/wp-content/uploads/2024/03/BxJUBuTM54.json" as="fetch" crossorigin="anonymous" />
-
-
+<!-- Preload Fonts -->
+<link rel="preload" href="https://walimatul.id/wp-content/uploads/2026/04/IvyMode-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+<link rel="preload" href="https://walimatul.id/wp-content/uploads/2024/03/Photograph-Signature.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+<link rel="preload" href="https://walimatul.id/wp-content/uploads/2025/07/1846NewYork.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" href="https://walimatul.id/wp-content/uploads/2024/04/FontsFree-Net-Creattion.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+<link rel="preload" href="https://walimatul.id/wp-content/uploads/2025/07/1846NewYork.woff" as="font" type="font/woff" crossorigin="anonymous" />
 `;
 
 // Fungsi untuk mengunduh file (mendukung file besar via streaming)[cite: 1]
