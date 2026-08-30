@@ -3,30 +3,13 @@ const path = require('path');
 const https = require('https');
 const http = require('http');
 const { URL } = require('url');
-const ALLOWED_DOMAINS = ["assets.weddingsaas.id","walimatul.id","web.galeriundanganofficial.com","cdnjs.cloudflare.com","cdn.jsdelivr.net"]; //[cite: 1]
+const ALLOWED_DOMAINS = ["assets.weddingsaas.id","walimatul.id","web.galeriundanganofficial.com","aset.walimatul.id","cdn.jsdelivr.net"]; //[cite: 1]
 const IMAGE_EXTENSIONS = []; //[cite: 1]
 // Contoh HTML yang berisi gambar, CSS, JS, font, audio, hingga video
 const htmlContent = `
 <!-- Font (Tag Link Preload) -->
-<link rel="preload" href="https://walimatul.id/wp-content/uploads/2025/07/4793Bahagia.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="https://walimatul.id/wp-content/uploads/2025/07/4793Bahagia.woff" as="font" type="font/woff" crossorigin>
-<link rel="preload" href="https://walimatul.id/wp-content/plugins/weddingsaas-pro/assets/plugins/custom/commentpress/fonts/saicfont.ttf?i08r8g" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="https://walimatul.id/wp-content/plugins/weddingsaas-pro/assets/plugins/custom/commentpress/fonts/saicfont.woff?i08r8g" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="https://aset.walimatul.id/uploads/video/Motion_Garden_05_1777664475.mp4" as="font" type="font/woff2" crossorigin>
 
-<!-- CSS (Tag Link) -->
-<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/css/conditionals/dialog.min.css?ver=4.2.3">
-<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/css/conditionals/lightbox.min.css?ver=4.2.3">
-
-<!-- JavaScript (Tag Script) -->
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/397f2d183c19202777d6.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/lightbox.3f9b3a051b2336dd5372.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.9.3"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js?ver=4.2.3"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/shared-frontend-handlers.03caa53373b56d3bab67.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor-pro/assets/js/lottie.5ea185196aba9f2de4f4.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/text-editor.45609661e409413f1cef.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor-pro/assets/js/countdown.05b148ca20af32fc8e9f.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor-pro/assets/js/gallery.cca2358f59857ce6f62f.bundle.min.js"></script>
 
 `;
 
