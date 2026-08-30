@@ -1,3 +1,48 @@
+document.addEventListener('DOMContentLoaded', async () => {
+    // 1. Cari elemen tombol/link RSVP di halaman
+    const rsvpLink = document.querySelector('a.saic-link');
+    
+    if (rsvpLink) {
+        // Ambil URL dari href untuk diekstrak parameternya
+        const linkHref = rsvpLink.getAttribute('href');
+        
+        // Ambil post_id secara dinamis dari URL href tersebut
+        const urlParams = new URLSearchParams(linkHref.substring(linkHref.indexOf('?')));
+        const postId = urlParams.get('post_id');
+        
+        if (postId) {
+            try {
+                // 2. Fetch ke endpoint V2 untuk mengambil json statistics
+                const response = await fetch(`${WDS_RSVP.ajaxurl}?action=rsvpkit_get_responses&post_id=${postId}`);
+                const result = await response.json();
+                
+                if (result.success && result.statistics) {
+                    const totalKomentar = result.statistics.total_responses;
+                    
+                    // 3. Update angka 0 di dalam <span>
+                    const spanAngka = rsvpLink.querySelector('span');
+                    if (spanAngka) {
+                        spanAngka.textContent = totalKomentar;
+                    }
+                    
+                    // 4. Update parameter 'comments=0' menjadi jumlah asli di atribut href
+                    const newHref = linkHref.replace(/comments=\d+/, `comments=${totalKomentar}`);
+                    rsvpLink.setAttribute('href', newHref);
+                    
+                    // 5. Trigger ulang klik agar script wds-rsvp.js memuat komentar HTML-nya
+                    // (Karena awalnya num_comments = 0, wds-rsvp.js mengabaikannya saat halaman pertama kali dimuat)
+                    if (parseInt(totalKomentar) > 0 && rsvpLink.classList.contains('auto-load-true')) {
+                        if (typeof jQuery !== 'undefined') {
+                            jQuery(rsvpLink).trigger('click');
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error("Gagal mengambil total komentar dari backend V2:", error);
+            }
+        }
+    }
+});
 function getComments_SAIC(post_id, num_comments, num_get_comments, order_comments,csrf_token,template_version) {
     var status = jQuery("#saic-comment-status-" + post_id)
       , $container_comments = jQuery("ul#saic-container-comment-" + post_id);
