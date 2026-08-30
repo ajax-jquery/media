@@ -7,35 +7,99 @@ const ALLOWED_DOMAINS = ["assets.weddingsaas.id","walimatul.id","web.galeriundan
 const IMAGE_EXTENSIONS = []; //[cite: 1]
 // Contoh HTML yang berisi gambar, CSS, JS, font, audio, hingga video
 const htmlContent = `
-<!-- Versi ukuran penuh (864w) -->
-<img fetchpriority="high" decoding="async" width="864" height="512" src="https://web.galeriundanganofficial.com/wp-content/uploads/2025/02/CARD.jpg" class="attachment-large size-large wp-image-62" alt="" sizes="(max-width: 800px) 100vw, 800px" />
-
-<!-- Versi ukuran kecil (300w) -->
-<img fetchpriority="high" decoding="async" width="300" height="178" src="https://web.galeriundanganofficial.com/wp-content/uploads/2025/02/CARD-300x178.jpg" class="attachment-large size-large wp-image-62" alt="" sizes="(max-width: 800px) 100vw, 800px" />
-
-<!-- Versi ukuran sedang (768w) -->
-<img fetchpriority="high" decoding="async" width="768" height="455" src="https://web.galeriundanganofficial.com/wp-content/uploads/2025/02/CARD-768x455.jpg" class="attachment-large size-large wp-image-62" alt="" sizes="(max-width: 800px) 100vw, 800px" />
 <!-- CSS (Tag Link) -->
-<link rel="stylesheet" href="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/css/widget-counter.min.css?ver=3.27.1">
-<link rel="stylesheet" href="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css?ver=3.27.1">
-<link rel="stylesheet" href="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/lib/animations/styles/e-animation-grow.min.css?ver=3.27.1">
-
-<!-- Gambar (Tag Img) -->
-<img src="https://web.galeriundanganofficial.com/wp-content/uploads/2025/02/CARD.jpg" alt="">
-<img src="https://web.galeriundanganofficial.com/wp-content/uploads/2025/02/cHIP.png" alt="">
-<img src="https://web.galeriundanganofficial.com/wp-content/uploads/2025/02/background-8-1.jpg" alt="">
-<img src="https://web.galeriundanganofficial.com/wp-content/uploads/2025/03/17580-scaled-1.jpg" alt="">
-<img src="https://web.galeriundanganofficial.com/wp-content/uploads/2025/02/CARD.jpg" alt="">
+<link rel="stylesheet" href="https://walimatul.id/wp-includes/css/dist/block-library/style.min.css?ver=7.1">
+<link rel="stylesheet" href="https://walimatul.id/wp-includes/css/dashicons.min.css?ver=7.1">
+<link rel="stylesheet" href="https://walimatul.id/wp-includes/css/editor.min.css?ver=7.1">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/jetformbuilder/modules/wysiwyg/assets/build/wysiwyg.css?ver=ec5ee578c1142cfd608f">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/weddingsaas-pro/assets/css/wds-elementor.css?ver=2.10.2">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/weddingsaas-pro/assets/plugins/custom/commentpress/saic_style.css?ver=2.10.2">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/themes/hello-elementor/style.css?ver=7.1">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/themes/walimatul-id/style.css?ver=7.1">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/themes/hello-elementor/assets/css/reset.css?ver=3.4.9">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/themes/hello-elementor/assets/css/theme.css?ver=3.4.9">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/themes/hello-elementor/assets/css/header-footer.css?ver=3.4.9">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/uploads/elementor/css/post-6.css?ver=1787906916">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/jetformbuilder/modules/option-field/assets/build/select.css?ver=23f0a66d9ec9a070c2dd">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/jetformbuilder/modules/option-field/assets/build/checkbox.css?ver=0a3ef3c1811be5626bbd">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/jetformbuilder/modules/option-field/assets/build/radio.css?ver=1526c067231cd47c97eb">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/jetformbuilder/modules/advanced-choices/assets/build/main.css?ver=ffb76854f41cac80abe5">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/jetformbuilder/modules/switcher/assets/build/switcher.css?ver=7c291d04aeede881ef68">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/jetformbuilder/modules/multi-gateway/assets/build/multi-gateway.css?ver=47bf27f09045105a3c5d">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor-pro/assets/css/widget-nav-menu.min.css?ver=4.2.2">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/css/conditionals/apple-webkit.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css?ver=8.4.5">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/css/conditionals/e-swiper.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor-pro/assets/css/widget-gallery.min.css?ver=4.2.2">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/lib/e-gallery/css/e-gallery.min.css?ver=1.2.0">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor-pro/assets/css/conditionals/transitions.min.css?ver=4.2.2">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor-pro/assets/css/modules/sticky.min.css?ver=4.2.2">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/lib/animations/styles/zoomIn.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor-pro/assets/css/widget-lottie.min.css?ver=4.2.2">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/css/widget-spacer.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor-pro/assets/css/widget-countdown.min.css?ver=4.2.2">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/css/widget-google_maps.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/css/widget-video.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/css/widget-divider.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/lib/animations/styles/fadeInUp.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/lib/animations/styles/fadeInDown.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/lib/animations/styles/e-animation-grow.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/lib/animations/styles/fadeIn.min.css?ver=4.2.3">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/uploads/elementor/css/post-2469.css?ver=1787906916">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/uploads/elementor/css/post-2473.css?ver=1787906916">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/uploads/elementor/css/post-4965.css?ver=1787906980">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/uploads/elementor/google-fonts/css/cormorant.css?ver=1742706129">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/uploads/elementor/google-fonts/css/jost.css?ver=1745253778">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/uploads/elementor/google-fonts/css/outfit.css?ver=1742664699">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/uploads/elementor/google-fonts/css/poppins.css?ver=1742715068">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/uploads/elementor/google-fonts/css/cormorantgaramond.css?ver=1751688916">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/uploads/elementor/google-fonts/css/pinyonscript.css?ver=1742716065">
+<link rel="stylesheet" href="https://walimatul.id/wp-content/uploads/elementor/google-fonts/css/quicksand.css?ver=1751779396">
 
 <!-- JavaScript (Tag Script) -->
-<script src="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js?ver=0.2.1"></script>
+<script src="https://walimatul.id/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script src="https://walimatul.id/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<script src="https://walimatul.id/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=4.2.3"></script>
+<script src="https://walimatul.id/wp-content/plugins/weddingsaas-pro/assets/plugins/custom/commentpress/saic_lib.js?ver=2.10.2"></script>
+<script src="https://walimatul.id/wp-content/plugins/weddingsaas-pro/assets/js/wds-rsvp.js?ver=2.10.2"></script>
+<script src="https://walimatul.id/wp-content/themes/hello-elementor/assets/js/hello-frontend.js?ver=3.4.9"></script>
+<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=4.2.3"></script>
+<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=4.2.3"></script>
+<script src="https://walimatul.id/wp-includes/js/jquery/ui/core.min.js?ver=1.14.2"></script>
+<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=4.2.3"></script>
+<script src="https://walimatul.id/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.2.1"></script>
+<script src="https://walimatul.id/wp-content/plugins/elementor/assets/lib/swiper/v8/swiper.min.js?ver=8.4.5"></script>
+<script src="https://walimatul.id/wp-content/plugins/elementor/assets/lib/e-gallery/js/e-gallery.min.js?ver=1.2.0"></script>
+<script src="https://walimatul.id/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=4.2.2"></script>
+<script src="https://walimatul.id/wp-content/plugins/weddingsaas-pro/assets/js/wds-elementor-audio.js?ver=2.10.2"></script>
+<script src="https://walimatul.id/wp-content/plugins/elementor-pro/assets/lib/lottie/lottie.min.js?ver=5.6.6"></script>
+<script src="https://walimatul.id/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-events-provider-content-events-33078016c5e1e9f07c35.js"></script>
+<script src="https://walimatul.id/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=4.2.2"></script>
+<script src="https://walimatul.id/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255"></script>
+<script src="https://walimatul.id/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216"></script>
+<script src="https://walimatul.id/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=4.2.2"></script>
+<script src="https://walimatul.id/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=4.2.2"></script>
+<script src="https://walimatul.id/wp-includes/js/wp-emoji-release.min.js?ver=7.1"></script>
 
-<!-- Font (Tag Link Preload) -->
-<link rel="preload" href="https://web.galeriundanganofficial.com/wp-content/uploads/useanyfont/5663robertson.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="https://web.galeriundanganofficial.com/wp-content/uploads/useanyfont/5663robertson.woff" as="font" type="font/woff" crossorigin>
+<!-- Gambar (Tag Img) -->
+<img src="https://walimatul.id/wp-content/uploads/2026/05/Garden-05-Couple-2.webp" alt="">
+<img src="https://walimatul.id/wp-content/uploads/2026/05/Garden-05-Couple-1.webp" alt="">
+<img src="https://walimatul.id/wp-content/uploads/2026/05/Garden-05-Bouquet-1.webp" alt="">
+<img src="https://walimatul.id/wp-content/uploads/2026/04/chip-atm-1-2-4.webp" alt="">
+<!-- Catatan: Anda memberikan link couple 1 dan couple 2 dua kali di akhir daftar, saya sertakan tagnya sesuai daftar yang Anda berikan -->
+<img src="https://walimatul.id/wp-content/uploads/2026/05/Garden-05-Couple-1.webp" alt="">
+<img src="https://walimatul.id/wp-content/uploads/2026/05/Garden-05-Couple-2.webp" alt="">
 
-<!-- Audio (.mp3) -->
-<audio src="https://web.galeriundanganofficial.com/wp-content/uploads/2025/03/Matthew-Ifield-I-Think-They-Call-This-Love-Cover.mp3" controls></audio>
+<!-- Audio (Tag Audio) -->
+<audio src="https://walimatul.id/wp-content/uploads/2026/04/Joe-Hisaishi-Merry-Go-Round-of-Life-from-Howls-Moving-Castle-1.mp3" controls></audio>
 
 `;
 
