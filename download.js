@@ -7,10 +7,15 @@ const ALLOWED_DOMAINS = ["assets.weddingsaas.id","walimatul.id","web.galeriundan
 const IMAGE_EXTENSIONS = []; //[cite: 1]
 // Contoh HTML yang berisi gambar, CSS, JS, font, audio, hingga video
 const htmlContent = `
-<link rel="preload" href="https://walimatul.id/wp-content/uploads/2024/05/ChavieraRegular-d9PwZ.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="https://walimatul.id/wp-content/uploads/2024/05/Hatolie.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="https://walimatul.id/wp-content/uploads/2024/03/Photograph-Signature.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="https://walimatul.id/wp-content/uploads/2026/04/IvyMode-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<!-- File CSS -->
+<link rel="stylesheet" href="https://walimatul.id/wp-content/uploads/elementor/css/post-4819.css?ver=1788068281">
+
+<!-- File Gambar (WebP & SVG) -->
+<img src="https://walimatul.id/wp-content/uploads/2026/04/cover-2-1.webp" alt="Cover 2">
+<img src="https://walimatul.id/wp-content/uploads/2026/04/Group-3.webp" alt="Group 3">
+<img src="https://walimatul.id/wp-content/uploads/2026/04/Asset-72-1.svg" alt="Asset 72">
+<img src="https://walimatul.id/wp-content/uploads/2026/04/Group-5.svg" alt="Group 5">
+<img src="https://walimatul.id/wp-content/uploads/2026/04/cover-2-1.webp" alt="Cover 2">
 `;
 
 // Fungsi untuk mengunduh file (mendukung file besar via streaming)[cite: 1]

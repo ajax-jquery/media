@@ -1,34 +1,24 @@
 #!/bin/bash
 
-# 1. Meminta input dari pengguna di terminal
-read -p "Masukkan nama tag baru (contoh: v1.0.1, atau tekan Enter jika tidak ingin membuat tag): " newTag
+# 1. Generate tag secara otomatis dengan format YYYY-MM-DDTHH-MM-SS
+newTag="v$(date +%Y-%m-%dT%H-%M-%S)"
+echo -e "\e[35mMenggunakan tag otomatis: $newTag\e[0m"
 
-# 2. Menambahkan dan melakukan commit
+# 2. Menambahkan dan melakukan commit[cite: 1]
 git add .
-# Jika newTag kosong, akan menggunakan pesan default "Update"
-if [ -z "$newTag" ]; then
-    git commit -m "Update"
-else
-    git commit -m "Update $newTag"
-fi
+git commit -m "Update $newTag"
 
-# 3. Membuat tag JIKA pengguna memasukkan nama tag
-if [ -n "$newTag" ]; then
-    git tag "$newTag"
-    echo -e "\e[32mTag $newTag berhasil dibuat!\e[0m" # Warna Hijau
-else
-    echo -e "\e[33mTidak ada tag baru yang dibuat. Menggunakan tag terakhir.\e[0m" # Warna Kuning
-fi
+# 3. Membuat tag[cite: 1]
+git tag "$newTag"
+echo -e "\e[32mTag $newTag berhasil dibuat!\e[0m" # Warna Hijau[cite: 1]
 
-# 4. Menjalankan script Node.js (otomatis mendeteksi tag terakhir)
+# 4. Menjalankan script Node.js (otomatis mendeteksi tag terakhir)[cite: 1]
 node update-tag.js
 
-# 5. Mengirim (Push) ke GitHub
+# 5. Mengirim (Push) ke GitHub[cite: 1]
 git push -u origin main
 
-# 6. Mengirim Tag ke GitHub JIKA ada tag baru
-if [ -n "$newTag" ]; then
-    git push origin --tags
-fi
+# 6. Mengirim Tag ke GitHub[cite: 1]
+git push origin --tags
 
-echo -e "\e[36mSelesai! Semua perubahan telah dikirim ke GitHub.\e[0m" # Warna Cyan
+echo -e "\e[36mSelesai! Semua perubahan telah dikirim ke GitHub.\e[0m" # Warna Cyan[cite: 1]
