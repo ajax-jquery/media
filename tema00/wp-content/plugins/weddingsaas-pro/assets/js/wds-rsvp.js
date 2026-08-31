@@ -1,5 +1,42 @@
 document.addEventListener("DOMContentLoaded",async()=>{const t=document.querySelector("a.saic-link");if(t){const e=t.getAttribute("href"),s=new URLSearchParams(e.substring(e.indexOf("?"))).get("post_id");if(s)try{const n=await fetch(`/tema00/wp-admin/admin-ajax.php?action=rsvpkit_get_responses&post_id=${s}`),a=await n.json();if(a.success&&a.statistics){const s=a.statistics.total_responses,n=t.querySelector("span");n&&(n.textContent=s);const i=e.replace(/comments=\d+/,`comments=${s}`);t.setAttribute("href",i),parseInt(s)>0&&t.classList.contains("auto-load-true")&&"undefined"!=typeof jQuery&&(jQuery(t).trigger("click"),setTimeout(function(){jQuery(t).trigger("click")},500))}}catch(t){console.error("Gagal mengambil total komentar:",t)}}});
-			
+jQuery(document).ready(function($) {
+    // Target spesifik ke input bukti transfer Anda
+    var $input = $('input[name="form_fields[buktitf]"]');
+    
+    if ($input.length) {
+        // Buat ID unik jika input bawaan belum memilikinya (syarat wajib agar label bisa diklik)
+        var inputId = $input.attr('id');
+        if (!inputId) {
+            inputId = 'custom-upload-tf';
+            $input.attr('id', inputId);
+        }
+
+        // Buat tombol/label palsu yang estetik
+        var $customBtn = $('<label for="' + inputId + '" class="btn-custom-upload"><i class="fas fa-cloud-upload-alt"></i><span>Pilih File Gambar...</span></label>');
+        
+        // Letakkan tombol ini tepat di bawah input aslinya
+        $input.after($customBtn);
+
+        // Deteksi ketika tamu selesai memilih foto dari HP/Laptop mereka
+        $input.on('change', function(e) {
+            var fileName = e.target.files[0] ? e.target.files[0].name : '';
+            var $span = $customBtn.find('span');
+            var $icon = $customBtn.find('i');
+
+            if (fileName) {
+                // Tampilkan nama file (cth: struk-bca.jpg) dan ubah warna jadi hijau
+                $span.text(fileName);
+                $icon.removeClass('fa-cloud-upload-alt').addClass('fa-check-circle');
+                $customBtn.addClass('file-selected');
+            } else {
+                // Kembalikan ke tampilan awal jika dibatalkan
+                $span.text('Pilih File Gambar...');
+                $icon.removeClass('fa-check-circle').addClass('fa-cloud-upload-alt');
+                $customBtn.removeClass('file-selected');
+            }
+        });
+    }
+});			
 document.addEventListener('DOMContentLoaded', () => {
                 const formGift = document.getElementById('form-konfirmasi-gift');
                 
@@ -26,10 +63,27 @@ document.addEventListener('DOMContentLoaded', () => {
                             
                             const result = await response.json();
                             
-                            if (result.success && result.data && result.data.data && result.data.data.redirect_url) {
-                                alert('Upload berhasil! Anda akan dialihkan ke WhatsApp untuk konfirmasi.');
-								formGift.reset();
-                                window.location.href = result.data.data.redirect_url;
+                           if (result.success && result.data && result.data.data && result.data.data.redirect_url) {
+                                // 1. Reset nilai input form
+                                formGift.reset();
+                                
+                                // 2. Kembalikan desain tombol file estetik (jika ada) ke awal
+                                var $customBtn = jQuery('.btn-custom-upload');
+                                if ($customBtn.length) {
+                                    $customBtn.removeClass('file-selected');
+                                    $customBtn.find('i').removeClass('fa-check-circle').addClass('fa-cloud-upload-alt');
+                                    $customBtn.find('span').text('Pilih File Gambar...');
+                                }
+
+                                // 3. Sembunyikan Form dan Munculkan Pesan Sukses
+                                formGift.style.display = 'none';
+                                document.getElementById('success-message-gift').style.display = 'block';
+
+                                // 4. Beri jeda 2,5 detik agar tamu bisa membaca pesan, lalu alihkan ke WA
+                                setTimeout(() => {
+                                    window.location.href = result.data.data.redirect_url;
+                                }, 2500); 
+                                
                             } else {
                                 const errorMsg = result.data && result.data.message ? result.data.message : (result.message || 'Gagal mengirim konfirmasi.');
                                 alert(errorMsg);
