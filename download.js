@@ -7,29 +7,24 @@ const ALLOWED_DOMAINS = ["assets.weddingsaas.id","walimatul.id","web.galeriundan
 const IMAGE_EXTENSIONS = []; //[cite: 1]
 // Contoh HTML yang berisi gambar, CSS, JS, font, audio, hingga video
 const htmlContent = `
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/397f2d183c19202777d6.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/lightbox.3f9b3a051b2336dd5372.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/text-path.a67c1f3a78d208bc7e1b.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/accordion.8b0db5058afeb74622f5.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/alert.b4336601ffdb6086d1b5.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/counter.12335f45aaa79d244f24.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/progress.0ea083b809812c0e3aa1.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/tabs.18344b05d8d1ea0702bc.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/toggle.2a177a3ef4785d3dfbc5.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/video.86d44e46e43d0807e708.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/image-carousel.6167d20b95b33386757b.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/text-editor.45609661e409413f1cef.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/wp-audio.c9624cb6e5dc9de86abd.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/nested-tabs.a2401356d329f179475e.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/nested-accordion.294d40984397351fd0f5.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/contact-buttons.e98d0220ce8c38404e7e.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/floating-bars.740d06d17cea5cebdb61.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/shared-frontend-handlers.03caa53373b56d3bab67.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/shared-editor-handlers.cacdcbed391abf4b48b0.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/container-editor-handlers.49d65af3a7e15d2d67e8.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/section-frontend-handlers.d85ab872da118940910d.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/section-editor-handlers.53ffedef32043348b99b.bundle.min.js"></script>
-<script src="https://walimatul.id/wp-content/plugins/elementor/assets/js/nested-title-keyboard-handler.2a67d3cc630e11815acc.bundle.min.js"></script>`;
+<script src="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/js/nested-title-keyboard-handler.fc9d01c2cd0ef46d20fd.bundle.min.js"></script>
+<script src="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/js/lightbox.f3fa607b705962362647.bundle.min.js"></script>
+<script src="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/js/text-path.5923566687faac82ea62.bundle.min.js"></script>
+<script src="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/js/accordion.36aa4c8c4eba17bc8e03.bundle.min.js"></script>
+<script src="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/js/alert.42cc1d522ef5c60bf874.bundle.min.js"></script>
+<script src="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/js/counter.12335f45aaa79d244f24.bundle.min.js"></script>
+<script src="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/js/progress.3200f67fe8fb78924bea.bundle.min.js"></script>
+<script src="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/js/tabs.537e7a0f178447960143.bundle.min.js"></script>
+<script src="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/js/toggle.a6177e2e3c2bc8864bef.bundle.min.js"></script>
+<script src="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/js/video.4343afefd25b5ede51a4.bundle.min.js"></script>
+<script src="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/js/image-carousel.6167d20b95b33386757b.bundle.min.js"></script>
+<script src="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/js/text-editor.c084ef86600b6f11690d.bundle.min.js"></script>
+<script src="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/js/wp-audio.c9624cb6e5dc9de86abd.bundle.min.js"></script>
+<script src="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/js/nested-accordion.c546968f7aebebc356f2.bundle.min.js"></script>
+<script src="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/js/contact-buttons.7c9983ed0d4964b951c2.bundle.min.js"></script>
+<script src="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/js/floating-bars.c1e9838906b386709cd4.bundle.min.js"></script>
+<script src="https://web.galeriundanganofficial.com/wp-content/plugins/elementor/assets/js/container.0754914e4611dc659a50.bundle.min.js"></script>
+`;
 
 // Fungsi untuk mengunduh file (mendukung file besar via streaming)[cite: 1]
 const downloadFile = (fileUrl, outputPath) => {
