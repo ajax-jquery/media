@@ -7,19 +7,10 @@ const ALLOWED_DOMAINS = ["assets.weddingsaas.id","walimatul.id","web.galeriundan
 const IMAGE_EXTENSIONS = []; //[cite: 1]
 // Contoh HTML yang berisi gambar, CSS, JS, font, audio, hingga video
 const htmlContent = `
-<!-- File CSS -->
-<link rel="stylesheet" href="https://walimatul.id/wp-content/plugins/elementor/assets/css/widget-image-box.min.css?ver=4.2.3">
-<link rel="stylesheet" href="https://walimatul.id/wp-content/uploads/elementor/css/post-4840.css?ver=1788066799">
-<link rel="stylesheet" href="https://walimatul.id/wp-content/uploads/elementor/google-fonts/css/alegreyasanssc.css?ver=1742748514">
-<link rel="stylesheet" href="https://walimatul.id/wp-content/uploads/elementor/google-fonts/css/raleway.css?ver=1742947790">
-<link rel="stylesheet" href="https://walimatul.id/wp-content/uploads/elementor/google-fonts/css/nunitosans.css?ver=1742665021">
-
-<!-- File Gambar (WebP) -->
-<img src="https://walimatul.id/wp-content/uploads/2026/04/floral-05-image-left.webp" alt="Floral Left">
-<img src="https://walimatul.id/wp-content/uploads/2026/04/Desain-tanpa-judul-1.webp" alt="Desain 1">
-<img src="https://walimatul.id/wp-content/uploads/2026/04/floral-05-image-right-2-1.webp" alt="Floral Right">
-<img src="https://walimatul.id/wp-content/uploads/2026/04/floral-05-image-left.webp" alt="Floral Left 2">
-<img src="https://walimatul.id/wp-content/uploads/2026/04/Desain-tanpa-judul-1.webp" alt="Desain 2">
+<link rel="preload" href="https://walimatul.id/wp-content/uploads/2024/05/ChavieraRegular-d9PwZ.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="https://walimatul.id/wp-content/uploads/2024/05/Hatolie.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="https://walimatul.id/wp-content/uploads/2024/03/Photograph-Signature.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="https://walimatul.id/wp-content/uploads/2026/04/IvyMode-Regular.ttf" as="font" type="font/ttf" crossorigin>
 `;
 
 // Fungsi untuk mengunduh file (mendukung file besar via streaming)[cite: 1]
