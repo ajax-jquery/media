@@ -25,6 +25,7 @@ function updateConfigByTag() {
     
     const isTema00Changed = changedFiles.some(file => file.startsWith('tema00/'));
     const isTema01Changed = changedFiles.some(file => file.startsWith('tema01/'));
+    const isTema02Changed = changedFiles.some(file => file.startsWith('tema02/'));
 
     // 3. Baca config.js yang sudah ada agar data tema yang TIDAK berubah tetap aman
     let currentConfig = {};
@@ -33,7 +34,7 @@ function updateConfigByTag() {
       currentConfig = require(TARGET_PATH);
     } else {
       // Jika file belum ada, inisialisasi dengan data kosong
-      currentConfig = { tema00: "", tema01: "" };
+      currentConfig = { tema00: "", tema01: "", tema02: "" };
     }
 
     // 4. Perbarui nilai tag JIKA folder tersebut mengalami perubahan
@@ -48,9 +49,14 @@ function updateConfigByTag() {
       console.log('-> Update terdeteksi pada tema01. Menerapkan tag...');
       isUpdated = true;
     }
+    if (isTema02Changed) {
+      currentConfig["tema02"] = latestTag;
+      console.log('-> Update terdeteksi pada tema02. Menerapkan tag...');
+      isUpdated = true;
+    }
 
     if (!isUpdated) {
-      console.log('Tidak ada perubahan pada folder tema00 atau tema01 di commit terakhir.');
+      console.log('Tidak ada perubahan pada folder tema00, tema01, atau tema02 di commit terakhir.');
       return; // Berhenti jika tidak ada folder tema yang berubah
     }
 
