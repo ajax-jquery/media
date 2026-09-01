@@ -1,0 +1,365 @@
+document.addEventListener("DOMContentLoaded",async()=>{const t=document.querySelector("a.saic-link");if(t){const e=t.getAttribute("href"),s=new URLSearchParams(e.substring(e.indexOf("?"))).get("post_id");if(s)try{const n=await fetch(`/tema00/wp-admin/admin-ajax.php?action=rsvpkit_get_responses&post_id=${s}`),a=await n.json();if(a.success&&a.statistics){const s=a.statistics.total_responses,n=t.querySelector("span");n&&(n.textContent=s);const i=e.replace(/comments=\d+/,`comments=${s}`);t.setAttribute("href",i),parseInt(s)>0&&t.classList.contains("auto-load-true")&&"undefined"!=typeof jQuery&&(jQuery(t).trigger("click"),setTimeout(function(){jQuery(t).trigger("click")},500))}}catch(t){console.error("Gagal mengambil total komentar:",t)}}});
+jQuery(document).ready(function($) {
+    // Target spesifik ke input bukti transfer Anda
+    var $input = $('input[name="form_fields[buktitf]"]');
+    
+    if ($input.length) {
+        // Buat ID unik jika input bawaan belum memilikinya (syarat wajib agar label bisa diklik)
+        var inputId = $input.attr('id');
+        if (!inputId) {
+            inputId = 'custom-upload-tf';
+            $input.attr('id', inputId);
+        }
+
+        // Buat tombol/label palsu yang estetik
+        var $customBtn = $('<label for="' + inputId + '" class="btn-custom-upload"><i class="fas fa-cloud-upload-alt"></i><span>Pilih File Gambar...</span></label>');
+        
+        // Letakkan tombol ini tepat di bawah input aslinya
+        $input.after($customBtn);
+
+        // Deteksi ketika tamu selesai memilih foto dari HP/Laptop mereka
+        $input.on('change', function(e) {
+            var fileName = e.target.files[0] ? e.target.files[0].name : '';
+            var $span = $customBtn.find('span');
+            var $icon = $customBtn.find('i');
+
+            if (fileName) {
+                // Tampilkan nama file (cth: struk-bca.jpg) dan ubah warna jadi hijau
+                $span.text(fileName);
+                $icon.removeClass('fa-cloud-upload-alt').addClass('fa-check-circle');
+                $customBtn.addClass('file-selected');
+            } else {
+                // Kembalikan ke tampilan awal jika dibatalkan
+                $span.text('Pilih File Gambar...');
+                $icon.removeClass('fa-check-circle').addClass('fa-cloud-upload-alt');
+                $customBtn.removeClass('file-selected');
+            }
+        });
+    }
+});			
+document.addEventListener('DOMContentLoaded', () => {
+                const formGift = document.getElementById('form-konfirmasi-gift');
+                
+                if (formGift) {
+                    // Sinkronisasi CSRF token
+              
+
+                    formGift.addEventListener('submit', async (e) => {
+                        e.preventDefault();
+                        const btn = document.getElementById('btn-submit-gift');
+                        const originalHTML = btn.innerHTML;
+                        
+                        btn.innerHTML = '<span class="elementor-button-content-wrapper"><span class="elementor-button-text">Memproses...</span></span>';
+                        btn.style.opacity = '0.7';
+                        btn.disabled = true;
+
+                        const formData = new FormData(formGift);
+                        
+                        try {
+                            const response = await fetch(WDS_RSVP.ajaxurl, {
+                                method: 'POST',
+                                body: formData
+                            });
+                            
+                            const result = await response.json();
+                            
+                           if (result.success && result.data && result.data.data && result.data.data.redirect_url) {
+                                // 1. Reset nilai input form
+                                formGift.reset();
+                                
+                                // 2. Kembalikan desain tombol file estetik (jika ada) ke awal
+                                var $customBtn = jQuery('.btn-custom-upload');
+                                if ($customBtn.length) {
+                                    $customBtn.removeClass('file-selected');
+                                    $customBtn.find('i').removeClass('fa-check-circle').addClass('fa-cloud-upload-alt');
+                                    $customBtn.find('span').text('Pilih File Gambar...');
+                                }
+
+                                // 3. Sembunyikan Form dan Munculkan Pesan Sukses
+                                formGift.style.display = 'none';
+                                document.getElementById('success-message-gift').style.display = 'block';
+
+                                // 4. Beri jeda 2,5 detik agar tamu bisa membaca pesan, lalu alihkan ke WA
+                                setTimeout(() => {
+                                    window.location.href = result.data.data.redirect_url;
+                                }, 2500); 
+                                
+                            } else {
+                                const errorMsg = result.data && result.data.message ? result.data.message : (result.message || 'Gagal mengirim konfirmasi.');
+                                alert(errorMsg);
+                            }
+                        } catch (error) {
+                            alert('Terjadi kesalahan jaringan atau koneksi.');
+                            console.error('Error Konfirmasi Gift:', error);
+                        } finally {
+                            btn.innerHTML = originalHTML;
+                            btn.style.opacity = '1';
+                            btn.disabled = false;
+                        }
+                    });
+                }
+            });
+function getComments_SAIC(post_id, num_comments, num_get_comments, order_comments,csrf_token,template_version) {
+    var status = jQuery("#saic-comment-status-" + post_id)
+      , $container_comments = jQuery("ul#saic-container-comment-" + post_id);
+    return num_comments > 0 && jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: WDS_RSVP.ajaxurl,
+        data: {
+            action: "get_comments",
+            post_id: post_id,
+            get: num_get_comments,
+            order: order_comments,
+			csrf_token:csrf_token,
+			template_version:template_version,
+            nonce: WDS_RSVP.nonce
+        },
+        beforeSend: function() {
+            status.addClass("saic-loading").html('<span class="saico-loading"></span>').show()
+        },
+        success: function(data) {
+            status.removeClass("saic-loading").html("").hide(),
+            $container_comments.html(data),
+            $container_comments.show(),
+            jPages_SAIC(post_id, WDS_RSVP.jPagesNum)
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            clog("ajax error"),
+            clog("jqXHR"),
+            clog(jqXHR),
+            clog("errorThrown"),
+            clog(errorThrown)
+        },
+        complete: function(jqXHR, textStatus) {}
+    }),
+    !1
+}
+function insertComment_SAIC(post_id, num_comments) {
+    var link_show_comments = jQuery("#saic-link-" + post_id)
+      , comment_form = jQuery("#commentform-" + post_id)
+      , status = jQuery("#saic-comment-status-" + post_id)
+      , formSubmit = jQuery("#saic-wrap-form-" + post_id)
+      , form_data = new FormData(comment_form[0])
+      , btnSubmit = jQuery(".saic-wrap-submit");
+    return form_data.append("action", "insert_comment"),
+    form_data.append("nonce", WDS_RSVP.nonce),
+    jQuery.ajax({
+        type: "POST",
+        dataType: "html",
+        url: WDS_RSVP.ajaxurl,
+        data: form_data,
+        processData: !1,
+        contentType: !1,
+        beforeSend: function() {
+            btnSubmit.hide(),
+            status.addClass("saic-loading").html('<span class="saico-loading"></span>').show()
+        },
+        success: function(data, textStatus) {
+            if (status.removeClass("saic-loading").html(""),
+            data.startsWith("error-")) {
+                let errorMessage = data.substring(6);
+                status.html('<p class="saic-ajax-error">' + errorMessage + "</p>"),
+                btnSubmit.show()
+            } else
+                status.html('<p class="saic-ajax-success">' + WDS_RSVP.thanksComment + "</p>"),
+                link_show_comments.find("span").length && (num_comments = String(parseInt(num_comments, 10) + 1),
+                link_show_comments.find("span").html(num_comments)),
+                jQuery("ul#saic-container-comment-" + post_id).prepend(data).show(),
+                jPages_SAIC(post_id, WDS_RSVP.jPagesNum, !0),
+                formSubmit.hide()
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+            status.removeClass("saic-loading").html('<p class="saic-ajax-error" >' + WDS_RSVP.duplicateComment + "</p>")
+        },
+        complete: function(jqXHR, textStatus) {
+            setTimeout((function() {
+                status.removeClass("saic-loading").fadeOut(600)
+            }
+            ), 2500)
+        }
+    }),
+    !1
+}
+function jPages_SAIC(post_id, $numPerPage, $destroy) {
+    if ("function" == typeof jQuery.fn.jPages) {
+        var $idList = "saic-container-comment-" + post_id, $holder = "div.saic-holder-" + post_id, num_comments;
+        jQuery("#" + $idList + " > li").length > $numPerPage && ($destroy && jQuery("#" + $idList).children().removeClass("animated jp-hidden"),
+        jQuery($holder).show().jPages({
+            containerID: $idList,
+            previous: WDS_RSVP.textNavPrev,
+            next: WDS_RSVP.textNavNext,
+            perPage: parseInt($numPerPage, 10),
+            minHeight: !1,
+            keyBrowse: !0,
+            direction: "forward",
+            animation: "fadeIn"
+        }))
+    }
+    return !1
+}
+function getUrlVars_SAIC(url) {
+    for (var query, parts = url.substring(url.indexOf("?") + 1).split("&"), params = {}, i = 0; i < parts.length; i++) {
+        var pair = parts[i].split("=");
+        params[pair[0]] = pair[1]
+    }
+    return params
+}
+function rezizeBoxComments_SAIC(wrapper) {
+    var widthWrapper;
+    wrapper.outerWidth() <= 480 ? wrapper.addClass("saic-full") : wrapper.removeClass("saic-full")
+}
+function clog(msg) {
+    console.log(msg)
+}
+jQuery(document).ready((function($) {
+    $(".saic-wrap-comments").each((function(index, element) {
+        var ids = $("[id='" + this.id + "']");
+        ids.length > 1 && ids.slice(1).closest(".saic-wrapper").remove()
+    }
+    )),
+    $('.saic-container-form [name="comment_parent"], .saic-container-form [name="comment_post_ID"]').each((function(index, input) {
+        $(input).removeAttr("id")
+    }
+    )),
+    "function" == typeof jQuery.fn.textareaCount && $(".saic-textarea").each((function() {
+        var textCount = {
+            maxCharacterSize: WDS_RSVP.textCounterNum,
+            originalStyle: "saic-counter-info",
+            warningStyle: "saic-counter-warn",
+            warningNumber: 20,
+            displayFormat: "#left"
+        };
+        $(this).textareaCount(textCount)
+    }
+    )),
+    "function" == typeof jQuery.fn.placeholder && $(".saic-wrap-form input, .saic-wrap-form textarea").placeholder(),
+    "function" == typeof autosize && autosize($("textarea.saic-textarea")),
+    $(".saic-wrapper").each((function() {
+        rezizeBoxComments_SAIC($(this))
+    }
+    )),
+    $(window).resize((function() {
+        $(".saic-wrapper").each((function() {
+            rezizeBoxComments_SAIC($(this))
+        }
+        ))
+    }
+    )),
+    $("body").on("click", "a.saic-link", (function(e) {
+        e.preventDefault();
+        var linkVars = getUrlVars_SAIC($(this).attr("href"))
+          , post_id = linkVars.post_id
+          , num_comments = linkVars.comments
+          , num_get_comments = linkVars.get
+          , order_comments = linkVars.order
+		  ,csrf_token = linkVars.csrf_token
+		  ,template_version=linkVars.template_version;
+        $("#saic-wrap-comment-" + post_id).slideToggle(200);
+        var container_comment = $("#saic-container-comment-" + post_id);
+        return container_comment.length && 0 === container_comment.html().length && getComments_SAIC(post_id, num_comments, num_get_comments, order_comments,csrf_token,template_version),
+        !1
+    }
+    )),
+    $("a.saic-link").length && $("a.saic-link.auto-load-true").each((function() {
+        $(this).click()
+    }
+    )),
+    $("input, select, textarea").focus((function() {
+        $(this).removeClass("saic-error"),
+        $(this).siblings(".saic-error-info").hide()
+    }
+    )),
+    $("#attendance").change((function() {
+        var selectedValue = $(this).val()
+          , guestSelect = $("#guest");
+        "present" === selectedValue ? $(".saic-wrap-guest").show() : $(".saic-wrap-guest").hide()
+    }
+    )),
+    $("body").on("submit", ".saic-container-form form", (function(e) {
+        e.preventDefault(),
+        $(this).find(":submit").attr("disabled", "disabled"),
+        $("input, textarea").removeClass("saic-error");
+        var formID, post_id = $(this).attr("id").replace("commentform-", ""), form = $("#commentform-" + post_id), link_show_comments, num_comments = $("#saic-link-" + post_id).attr("href").split("=")[2], form_ok = !0, $content;
+        if (form.find("textarea").val().replace(/\s+/g, " ").length < 2)
+            return form.find(".saic-textarea").addClass("saic-error"),
+            form.find(".saic-error-info-text").show(),
+            setTimeout((function() {
+                form.find(".saic-error-info-text").fadeOut(500)
+            }
+            ), 2500),
+            $(this).find(":submit").removeAttr("disabled"),
+            !1;
+        if ($(this).find("input#author").length) {
+            var $author = $(this).find("input#author"), $authorVal = $author.val().replace(/\s+/g, " "), $authorRegEx;
+            " " != $authorVal && /^[^<>]{1,50}$/i.test($authorVal) || ($author.addClass("saic-error"),
+            form.find(".saic-error-info-name").show(),
+            setTimeout((function() {
+                form.find(".saic-error-info-name").fadeOut(500)
+            }
+            ), 3e3),
+            form_ok = !1)
+        }
+        if ($(this).find("input#email").length) {
+            var $emailRegEx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$/i
+              , $email = $(this).find("input#email")
+              , $emailVal = $email.val().replace(/\s+/g, "");
+            $email.val($emailVal),
+            $emailRegEx.test($emailVal) || ($email.addClass("saic-error"),
+            form.find(".saic-error-info-email").show(),
+            setTimeout((function() {
+                form.find(".saic-error-info-email").fadeOut(500)
+            }
+            ), 3e3),
+            form_ok = !1)
+        }
+        if ($(this).find("select#attendance").length) {
+            var $attendance = $(this).find("select#attendance")
+              , $guest = $(this).find("select#guest");
+            if ($attendance.length > 0) {
+                var $attendanceVal = $attendance.val();
+                if (null !== $attendanceVal && "" !== $attendanceVal.trim()) {
+                    var $attendanceVals = $attendanceVal.replace(/\s+/g, " "), $attendanceRegEx;
+                    if (/^[^?&%$=\/]{1,30}$/i.test($attendanceVals) || ($attendance.addClass("saic-error"),
+                    form.find(".saic-error-info-attendance").show(),
+                    setTimeout((function() {
+                        form.find(".saic-error-info-attendance").fadeOut(500)
+                    }
+                    ), 3e3),
+                    form_ok = !1),
+                    "present" == $attendanceVal) {
+                        var $guestVal = $guest.val();
+                        null != $guestVal && "" != $guestVal.trim() || ($guest.addClass("saic-error"),
+                        form.find(".saic-error-info-guest").show(),
+                        setTimeout((function() {
+                            form.find(".saic-error-info-guest").fadeOut(500)
+                        }
+                        ), 3e3),
+                        form_ok = !1);
+                        if (form.find('input[name="events[]"]').length > 0 && form.find('input[name="events[]"]:checked').length === 0) {
+                            form.find(".saic-error-info-events").show();
+                            setTimeout((function() {
+                                form.find(".saic-error-info-events").fadeOut(500)
+                            }
+                            ), 3e3);
+                            form_ok = !1
+                        }
+                    }
+                } else
+                    $attendance.addClass("saic-error"),
+                    form.find(".saic-error-info-attendance").show(),
+                    setTimeout((function() {
+                        form.find(".saic-error-info-attendance").fadeOut(500)
+                    }
+                    ), 3e3),
+                    form_ok = !1
+            }
+        }
+        return form_ok ? (!0 === form_ok && insertComment_SAIC(post_id, num_comments),
+        $(this).find(":submit").removeAttr("disabled"),
+        !1) : ($(this).find(":submit").removeAttr("disabled"),
+        !1)
+    }
+    ))
+}
+));
