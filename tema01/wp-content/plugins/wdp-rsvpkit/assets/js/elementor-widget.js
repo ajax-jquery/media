@@ -126,7 +126,8 @@
                 cardTotal: $scope.find('.rsvpkit-stat-card.total'),
                 cardGuests: $scope.find('.rsvpkit-stat-card.guests'),
                 cardAttending: $scope.find('.rsvpkit-stat-card.attending'),
-                cardNotAttending: $scope.find('.rsvpkit-stat-card.not-attending')
+                cardNotAttending: $scope.find('.rsvpkit-stat-card.not-attending'),
+				cardNotSure: $scope.find('.rsvpkit-stat-card.not-sure')
             };
         },
 
@@ -155,6 +156,7 @@
             bind('show_card_guests', this.onCardGuestsToggle);
             bind('show_card_attending', this.onCardAttendingToggle);
             bind('show_card_not_attending', this.onCardNotAttendingToggle);
+			bind('show_card_not_sure', this.onCardNotSureToggle);
         },
 
         getSetting: function (key) {
@@ -172,6 +174,7 @@
             this.onCardGuestsToggle(this.getSetting('show_card_guests'));
             this.onCardAttendingToggle(this.getSetting('show_card_attending'));
             this.onCardNotAttendingToggle(this.getSetting('show_card_not_attending'));
+			this.onCardNotSureToggle(this.getSetting('show_card_not_sure'));
         },
 
         onStatsGridToggle: function (newValue) {
@@ -213,6 +216,14 @@
             var show = this.isYes(newValue);
             if (this.ui.cardNotAttending && this.ui.cardNotAttending.length) {
                 this.ui.cardNotAttending.toggleClass('rsvpkit-hidden', !show);
+            }
+        },
+		
+		onCardNotSureToggle: function (newValue) {
+            this.refreshUi();
+            var show = this.isYes(newValue);
+            if (this.ui.cardNotSure && this.ui.cardNotSure.length) {
+                this.ui.cardNotSure.toggleClass('rsvpkit-hidden', !show);
             }
         }
     });
@@ -785,6 +796,7 @@
         const badgeIconView = String($feed.data('badge-icon-view') || 'default');
         const badgeIconAttending = String($feed.data('badge-icon-attending') || 'fas fa-check');
         const badgeIconNotAttending = String($feed.data('badge-icon-not-attending') || 'fas fa-times');
+		const badgeIconNotSure = String($feed.data('badge-icon-notsure') || 'fas fa-question');
         const showDateTime = ($feed.data('show-datetime') === 'yes');
         const avatarType = String($feed.data('avatar-type') || 'initials').toLowerCase();
         const avatarUrl = String($feed.data('avatar-url') || '');
@@ -799,6 +811,7 @@
         // i18n labels (with data-* overrides)
         const labelAttending = String($feed.data('label-attending') || (rsvpkit_ajax && rsvpkit_ajax.strings && rsvpkit_ajax.strings.status_attending) || 'Attendance');
         const labelNotAttendance = String($feed.data('label-not-attendance') || (rsvpkit_ajax && rsvpkit_ajax.strings && rsvpkit_ajax.strings.status_not_attending) || 'Not Attendance');
+		const labelNotSure = String($feed.data('label-notsure') || 'Ragu-ragu'); // Tambahan Baru
         const labelPrev = String($feed.data('label-prev') || 'Prev');
         const labelNext = String($feed.data('label-next') || 'Next');
         const labelLoadMore = String($feed.data('label-load-more') || 'Load More');
@@ -849,16 +862,27 @@
             }
             const initials = computeInitials(item.guest_name);
             const initialsClass = initials.length > 4 ? 'extra-long-initials' : (initials.length > 2 ? 'long-initials' : '');
-            const statusText = (item.attendance_status === 'attending' ? labelAttending : labelNotAttendance);
+            // Logika Status 3 Arah
+            let statusText = labelNotSure;
+            let statusClass = 'not-sure';
+            let iconClass = badgeIconNotSure;
+
+            if (item.attendance_status === 'attending') {
+                statusText = labelAttending;
+                statusClass = 'attending';
+                iconClass = badgeIconAttending;
+            } else if (item.attendance_status === 'not_attending') {
+                statusText = labelNotAttendance;
+                statusClass = 'not-attending';
+                iconClass = badgeIconNotAttending;
+            }
             let badgeHtml = '';
             if (showBadge) {
                 if (badgeType === 'icon') {
-                    const iconClass = (item.attendance_status === 'attending') ? badgeIconAttending : badgeIconNotAttending;
-                    const statusClass = (item.attendance_status === 'attending') ? 'attending' : 'not-attending';
                     const viewClass = (badgeIconView !== 'default') ? ' rsvpkit-view-' + badgeIconView : '';
                     badgeHtml = '<span class="rsvpkit-badge-icon ' + statusClass + viewClass + '"><i class="' + escapeHtml(iconClass) + '"></i></span>';
                 } else {
-                    badgeHtml = '<span class="rsvpkit-badge ' + (item.attendance_status === 'attending' ? 'attending' : 'not-attending') + '">' + escapeHtml(statusText) + '</span>';
+                    badgeHtml = '<span class="rsvpkit-badge ' + statusClass + '">' + escapeHtml(statusText) + '</span>';
                 }
             }
             const dateObj = new Date(item.created_at_iso || item.created_at);
@@ -1172,6 +1196,7 @@
             total_responses: stats.total_responses || 0,
             attending_count: stats.attending_count || 0,
             not_attending_count: stats.not_attending_count || 0,
+			not_sure_count: stats.not_sure_count || 0,
             total_guests: stats.total_guests || 0
         };
         try {
@@ -1241,16 +1266,22 @@
          */
         getAttendanceText: function (status) {
             if (typeof rsvpkit_ajax !== 'undefined' && rsvpkit_ajax.strings) {
-                return status === 'attending' ? rsvpkit_ajax.strings.status_attending : rsvpkit_ajax.strings.status_not_attending;
+                if (status === 'attending') return rsvpkit_ajax.strings.status_attending;
+                if (status === 'not_attending') return rsvpkit_ajax.strings.status_not_attending;
+                return rsvpkit_ajax.strings.status_not_sure || 'Ragu-ragu';
             }
-            return status === 'attending' ? 'Hadir' : 'Tidak Hadir';
+            if (status === 'attending') return 'Hadir';
+            if (status === 'not_attending') return 'Tidak Hadir';
+            return 'Ragu-ragu';
         },
 
         /**
          * Get attendance status class
          */
         getAttendanceClass: function (status) {
-            return status === 'attending' ? 'attending' : 'not-attending';
+            if (status === 'attending') return 'attending';
+            if (status === 'not_attending') return 'not-attending';
+            return 'not-sure';
         }
     };
 
@@ -1276,6 +1307,7 @@
                     total_responses: stats.total_responses || 0,
                     attending_count: stats.attending_count || 0,
                     not_attending_count: stats.not_attending_count || 0,
+					not_sure_count: stats.not_sure_count || 0,
                     total_guests: stats.total_guests || 0
                 };
                 // Update DOM numbers by data-stat-key

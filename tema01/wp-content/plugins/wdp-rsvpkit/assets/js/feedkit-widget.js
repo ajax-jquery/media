@@ -440,6 +440,11 @@
             this.showMessage = this.$container.data('show-message') === 'yes';
             this.showBadge = this.$container.data('show-badge') === 'yes';
 
+            // TAMBAHAN: Tarik label dinamis dari atribut HTML
+            this.labelAttending = String(this.$container.data('label-attending') || window.rsvpkit_ajax?.strings?.status_attending || 'Hadir');
+            this.labelNotAttending = String(this.$container.data('label-not-attendance') || window.rsvpkit_ajax?.strings?.status_not_attending || 'Tidak Hadir');
+            this.labelNotSure = String(this.$container.data('label-notsure') || 'Ragu-ragu');
+
             // State
             this.pollingTimer = null;
             this.lastResponseIds = [];
@@ -556,10 +561,18 @@
 
         renderResponseItem(response) {
             const initials = this.getInitials(response.guest_name);
-            const badgeClass = response.attendance_status === 'attending' ? 'attending' : 'not-attending';
-            const badgeText = response.attendance_status === 'attending'
-                ? (window.rsvpkit_ajax?.strings?.status_attending || 'Attending')
-                : (window.rsvpkit_ajax?.strings?.status_not_attending || 'Not Attending');
+            
+            // LOGIKA BARU 3 ARAH
+            let badgeClass = 'not-sure';
+            let badgeText = this.labelNotSure;
+
+            if (response.attendance_status === 'attending') {
+                badgeClass = 'attending';
+                badgeText = this.labelAttending;
+            } else if (response.attendance_status === 'not_attending') {
+                badgeClass = 'not-attending';
+                badgeText = this.labelNotAttending;
+            }
 
             // Format date client-side to match user's local timezone
             const isoDate = response.created_at_iso || response.created_at; // Fallback
@@ -649,6 +662,11 @@
             this.labelLoadMore = String(this.$container.data('label-load-more') || 'Load More');
             this.labelPrev = String(this.$container.data('label-prev') || 'Prev');
             this.labelNext = String(this.$container.data('label-next') || 'Next');
+            
+            // TAMBAHAN: Tarik label dinamis dari atribut HTML
+            this.labelAttending = String(this.$container.data('label-attending') || window.rsvpkit_ajax?.strings?.status_attending || 'Hadir');
+            this.labelNotAttending = String(this.$container.data('label-not-attendance') || window.rsvpkit_ajax?.strings?.status_not_attending || 'Tidak Hadir');
+            this.labelNotSure = String(this.$container.data('label-notsure') || 'Ragu-ragu');
 
             // State
             this.page = 1;
@@ -769,10 +787,18 @@
 
         renderResponseItem(response) {
             const initials = this.getInitials(response.guest_name);
-            const badgeClass = response.attendance_status === 'attending' ? 'attending' : 'not-attending';
-            const badgeText = response.attendance_status === 'attending'
-                ? (window.rsvpkit_ajax?.strings?.status_attending || 'Attending')
-                : (window.rsvpkit_ajax?.strings?.status_not_attending || 'Not Attending');
+            
+            // LOGIKA BARU 3 ARAH
+            let badgeClass = 'not-sure';
+            let badgeText = this.labelNotSure;
+
+            if (response.attendance_status === 'attending') {
+                badgeClass = 'attending';
+                badgeText = this.labelAttending;
+            } else if (response.attendance_status === 'not_attending') {
+                badgeClass = 'not-attending';
+                badgeText = this.labelNotAttending;
+            }
 
             const isoDate = response.created_at_iso || response.created_at;
             const dateStr = formatClientDate(isoDate);
