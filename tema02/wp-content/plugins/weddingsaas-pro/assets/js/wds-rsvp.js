@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded",async()=>{const t=document.querySelector("a.saic-link");if(t){const e=t.getAttribute("href"),s=new URLSearchParams(e.substring(e.indexOf("?"))).get("post_id");if(s)try{const n=await fetch(`/tema00/wp-admin/admin-ajax.php?action=rsvpkit_get_responses&post_id=${s}`),a=await n.json();if(a.success&&a.statistics){const s=a.statistics.total_responses,n=t.querySelector("span");n&&(n.textContent=s);const i=e.replace(/comments=\d+/,`comments=${s}`);t.setAttribute("href",i),parseInt(s)>0&&t.classList.contains("auto-load-true")&&"undefined"!=typeof jQuery&&(jQuery(t).trigger("click"),setTimeout(function(){jQuery(t).trigger("click")},500))}}catch(t){console.error("Gagal mengambil total komentar:",t)}}});
+document.addEventListener("DOMContentLoaded",async()=>{const t=document.querySelector("a.saic-link");if(t){const e=t.getAttribute("href"),s=new URLSearchParams(e.substring(e.indexOf("?"))).get("post_id");if(s)try{const n=await fetch(`/tema00/wp-admin/admin-ajax.php?action=rsvpkit_get_responses&post_id=${s}`),a=await n.json();if(a.success&&a.statistics){const s=a.statistics.total_responses,n=t.querySelector("span");n&&(n.textContent=s);const i=e.replace(/comments=\d+/,`comments=${s}`);t.setAttribute("href",i),parseInt(s)>0&&t.classList.contains("auto-load-true")&&"undefined"!=typeof jQuery&&(jQuery(t).trigger("click"))}}catch(t){console.error("Gagal mengambil total komentar:",t)}}});
 jQuery(document).ready(function($) {
     // Target spesifik ke input bukti transfer Anda
     var $input = $('input[name="form_fields[buktitf]"]');
@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }
             });
+let isClick = false;
 function getComments_SAIC(post_id, num_comments, num_get_comments, order_comments,csrf_token,template_version) {
     var status = jQuery("#saic-comment-status-" + post_id)
       , $container_comments = jQuery("ul#saic-container-comment-" + post_id);
@@ -121,7 +122,12 @@ function getComments_SAIC(post_id, num_comments, num_get_comments, order_comment
         success: function(data) {
             status.removeClass("saic-loading").html("").hide(),
             $container_comments.html(data),
-            $container_comments.show(),
+            $container_comments.show();
+          if (!isClick) {
+                jQuery("#saic-link-" + post_id).trigger("click");
+                isClick = true;
+            };
+          
             jPages_SAIC(post_id, WDS_RSVP.jPagesNum)
         },
         error: function(jqXHR, textStatus, errorThrown) {
@@ -184,17 +190,24 @@ function insertComment_SAIC(post_id, num_comments) {
 function jPages_SAIC(post_id, $numPerPage, $destroy) {
     if ("function" == typeof jQuery.fn.jPages) {
         var $idList = "saic-container-comment-" + post_id, $holder = "div.saic-holder-" + post_id, num_comments;
-        jQuery("#" + $idList + " > li").length > $numPerPage && ($destroy && jQuery("#" + $idList).children().removeClass("animated jp-hidden"),
-        jQuery($holder).show().jPages({
-            containerID: $idList,
-            previous: WDS_RSVP.textNavPrev,
-            next: WDS_RSVP.textNavNext,
-            perPage: parseInt($numPerPage, 10),
-            minHeight: !1,
-            keyBrowse: !0,
-            direction: "forward",
-            animation: "fadeIn"
-        }))
+        
+        if (jQuery("#" + $idList + " > li").length > $numPerPage) {
+            $destroy && jQuery("#" + $idList).children().removeClass("animated jp-hidden");
+            
+            // Hancurkan paginasi lama agar tidak menumpuk saat diload ulang
+            try { jQuery($holder).jPages("destroy"); } catch(e) {}
+            
+            jQuery($holder).show().jPages({
+                containerID: $idList,
+                previous: WDS_RSVP.textNavPrev,
+                next: WDS_RSVP.textNavNext,
+                perPage: parseInt($numPerPage, 10),
+                minHeight: !1,
+                keyBrowse: !0,
+                direction: "forward",
+                animation: "fadeIn"
+            });
+        }
     }
     return !1
 }
