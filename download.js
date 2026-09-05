@@ -9,7 +9,7 @@ const IMAGE_EXTENSIONS = [];////[cite: 3]
 
 // Contoh HTML yang berisi gambar, CSS, JS, font, audio, hingga video
 const htmlContent = `
-<script src="https://assets.inviee.id/motion/Velvet-Garden-HD.mp4">
+<script src="https://hi.inviee.id/wp-content/uploads/2024/12/bird-hitam.json">
 `;
 
 // Fungsi untuk mengunduh file (mendukung file besar via streaming)//[cite: 3]
