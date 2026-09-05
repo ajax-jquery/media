@@ -9,73 +9,412 @@ const IMAGE_EXTENSIONS = [];////[cite: 3]
 
 // Contoh HTML yang berisi gambar, CSS, JS, font, audio, hingga video
 const htmlContent = `
+<style>				@font-face {
+					font-family: 'newyork';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/6864Newyork.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/6864Newyork.woff') format('woff');
+					   font-display: auto;
+				}
 
-<!-- CSS Links -->
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/css/modules/bdt-uikit.css?ver=3.15.1">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/css/modules/ep-helper.css?ver=3.2.1.5">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/jet-engine/assets/css/frontend.css?ver=3.8.14.3">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/eltemplate/public/css/eltemplate-public.css?ver=2.0.0">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/useanyfont/uaf.css?ver=1787245120">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/css/exad-styles.min.css?ver=7.0.4">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/css/new-icon.min.css?ver=3.2.1.5">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/themes/weddingsaas-wp/assets/css/reset.css?ver=2.1.0">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/css/wdp-copy-widget.css?ver=3.2.1.5">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/eveent/assets/css/ev-rsvp-style.css?ver=2.4.4">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/eveent/assets/css/ewf-barcode-style.css?ver=1780897927">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.53.0">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/css/post-1235.css?ver=1788409522">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/eltemplate/includes/widgets/css/frontend.css?ver=1">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/css/wdp.css?ver=3.2.1.5">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/css/guest-book.css?ver=3.2.1.5">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/css/post-287617.css?ver=1788409609">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/google-fonts/css/roboto.css?ver=1745682165">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/google-fonts/css/robotoslab.css?ver=1745682166">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/google-fonts/css/playfairdisplay.css?ver=1745682189">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/google-fonts/css/opensans.css?ver=1745686640">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/google-fonts/css/vidaloka.css?ver=1745686640">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/google-fonts/css/prata.css?ver=1745686641">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/google-fonts/css/cormorantinfant.css?ver=1745682187">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/eltemplate/includes/widgets/css/style.css?ver=1.0">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/eltemplate/includes/widgets/css/widget-image-box.min.css?ver=1.0">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/eltemplate/includes/widgets/css/widget-icon-box.min.css?ver=1.0">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/eltemplate/includes/widgets/css/widget-spacer.css?ver=1.0">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/eltemplate/includes/widgets/css/widget-video.css?ver=1.0">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/css/post-147102.css?ver=1788409524">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/google-fonts/css/dmsans.css?ver=1745682169">
-<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/google-fonts/css/publicsans.css?ver=1745682170">
+				.newyork{font-family: 'newyork' !important;}
 
-<!-- JavaScript Files -->
-<script src="https://hi.inviee.id/wp-content/plugins/eltemplate/public/js/eltemplate-public.js?ver=2.0.0"></script>
-<script src="https://hi.inviee.id/wp-includes/js/dist/vendor/react.min.js?ver=18.3.1.1"></script>
-<script src="https://hi.inviee.id/wp-includes/js/dist/vendor/react-dom.min.js?ver=18.3.1.1"></script>
-<script src="https://hi.inviee.id/wp-includes/js/dist/escape-html.min.js?ver=3f093e5cca67aa0f8b56"></script>
-<script src="https://hi.inviee.id/wp-includes/js/dist/element.min.js?ver=15ba804677f72a8db97b"></script>
-<script src="https://hi.inviee.id/wp-content/plugins/eltemplate/admin/js/license.min.js?ver=2.0.0"></script>
-<script src="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/js/wdp-swiper.min.js"></script>
-<script src="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/js/qr-code.js"></script>
-<script src="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/js/exad-scripts.min.js?ver=3.2.1.5"></script>
-<script src="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/js/license.min.js?ver=3.2.1.5"></script>
-<script src="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/js/wdp-copy-widget.js?ver=3.2.1.5"></script>
-<script src="https://hi.inviee.id/wp-content/plugins/eveent/assets/js/ev-rsvp-handler.js?ver=1780897927"></script>
-<script src="https://hi.inviee.id/wp-content/plugins/eveent/assets/js/ewf-barcode-handler.js?ver=1780897927"></script>
-<script src="https://hi.inviee.id/wp-content/plugins/eveent/assets/js/ewf-download-handler.js?ver=2.4.4"></script>
-<script src="https://hi.inviee.id/wp-content/plugins/eltemplate/includes/widgets/js/widget-video.js?ver=2.0.0"></script>
-<script src="https://hi.inviee.id/wp-content/plugins/eltemplate/includes/widgets/js/script.js?ver=1.0"></script>
-<script src="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/js/modules/bdt-uikit.js?ver=3.15.1"></script>
-<script src="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/js/wdp.min.js?ver=3.2.1.5"></script>
-<script src="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/js/guest-form.js?ver=3.2.1.5"></script>
+						@font-face {
+					font-family: 'edensor-free';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/6521Edensor-free.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/6521Edensor-free.woff') format('woff');
+					   font-display: auto;
+				}
 
-<!-- Images -->
-<img src="https://hi.inviee.id/wp-content/uploads/2026/07/Velvet-Garden-Icon.webp" alt="">
-<img src="https://hi.inviee.id/wp-content/uploads/2026/03/bunga-tema-2-HvOzRp.webp" alt="">
-<img src="https://hi.inviee.id/wp-content/uploads/2026/07/Velvet-Garden-Bunga.webp" alt="">
-<img src="https://hi.inviee.id/wp-content/uploads/2024/12/chip-atm1.webp" alt="">
-<img src="https://hi.inviee.id/wp-content/uploads/2026/07/Velvet-Garden-Icon.webp" alt="">
-<img src="https://hi.inviee.id/wp-content/uploads/2026/03/bunga-tema-2-HvOzRp.webp" alt="">
+				.edensor-free{font-family: 'edensor-free' !important;}
 
-<!-- JSON / Lottie Files -->
-<link rel="preload" href="https://hi.inviee.id/wp-content/uploads/2024/08/lottie-mouse-black.json" as="fetch" type="application/json">
+						@font-face {
+					font-family: 'over-thingking';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/62Over-thingking.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/62Over-thingking.woff') format('woff');
+					   font-display: auto;
+				}
 
+				.over-thingking{font-family: 'over-thingking' !important;}
+
+						@font-face {
+					font-family: 'mogan';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/9471Mogan.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/9471Mogan.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.mogan{font-family: 'mogan' !important;}
+
+						@font-face {
+					font-family: 'vensfolk';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/7592Vensfolk.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/7592Vensfolk.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.vensfolk{font-family: 'vensfolk' !important;}
+
+						@font-face {
+					font-family: 'vogate';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/2096Vogate.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/2096Vogate.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.vogate{font-family: 'vogate' !important;}
+
+						@font-face {
+					font-family: 'delon';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/9529Delon.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/9529Delon.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.delon{font-family: 'delon' !important;}
+
+						@font-face {
+					font-family: 'achava';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/6699Achava.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/6699Achava.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.achava{font-family: 'achava' !important;}
+
+						@font-face {
+					font-family: 'capella';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/7375Capella.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/7375Capella.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.capella{font-family: 'capella' !important;}
+
+						@font-face {
+					font-family: 'gadish';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/767Gadish.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/767Gadish.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.gadish{font-family: 'gadish' !important;}
+
+						@font-face {
+					font-family: 'history';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/632History.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/632History.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.history{font-family: 'history' !important;}
+
+						@font-face {
+					font-family: 'qagetto';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/4192Qagetto.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/4192Qagetto.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.qagetto{font-family: 'qagetto' !important;}
+
+						@font-face {
+					font-family: 'queen-rogette';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/4535Queen-Rogette.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/4535Queen-Rogette.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.queen-rogette{font-family: 'queen-rogette' !important;}
+
+						@font-face {
+					font-family: 'romland';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/1951ROMLAND.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/1951ROMLAND.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.romland{font-family: 'romland' !important;}
+
+						@font-face {
+					font-family: 'starsight';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/3233Starsight.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/3233Starsight.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.starsight{font-family: 'starsight' !important;}
+
+						@font-face {
+					font-family: 'gabyan';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/9462Gabyan.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/9462Gabyan.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.gabyan{font-family: 'gabyan' !important;}
+
+						@font-face {
+					font-family: 'analogue';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/3106Analogue.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/3106Analogue.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.analogue{font-family: 'analogue' !important;}
+
+						@font-face {
+					font-family: 'fugi';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/5760Fugi.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/5760Fugi.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.fugi{font-family: 'fugi' !important;}
+
+						@font-face {
+					font-family: 'ginger';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/3902Ginger.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/3902Ginger.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.ginger{font-family: 'ginger' !important;}
+
+						@font-face {
+					font-family: 'granola';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/2843Granola.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/2843Granola.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.granola{font-family: 'granola' !important;}
+
+						@font-face {
+					font-family: 'grande';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/4497Grande.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/4497Grande.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.grande{font-family: 'grande' !important;}
+
+						@font-face {
+					font-family: 'sugar';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/6436Sugar.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/6436Sugar.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.sugar{font-family: 'sugar' !important;}
+
+						@font-face {
+					font-family: 'ginkgo';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/571Ginkgo.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/571Ginkgo.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.ginkgo{font-family: 'ginkgo' !important;}
+
+						@font-face {
+					font-family: 'calista';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/3667Calista.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/3667Calista.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.calista{font-family: 'calista' !important;}
+
+						@font-face {
+					font-family: 'satisfy';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/3203Satisfy.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/3203Satisfy.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.satisfy{font-family: 'satisfy' !important;}
+
+						@font-face {
+					font-family: 'ginger-modern';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/4990Ginger-Modern.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/4990Ginger-Modern.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.ginger-modern{font-family: 'ginger-modern' !important;}
+
+						@font-face {
+					font-family: 'south-amsterdam';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/1625South-Amsterdam.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/1625South-Amsterdam.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.south-amsterdam{font-family: 'south-amsterdam' !important;}
+
+						@font-face {
+					font-family: 'girly-style';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/681Girly-Style.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/681Girly-Style.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.girly-style{font-family: 'girly-style' !important;}
+
+						@font-face {
+					font-family: 'just-sunday-bold';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/9179Just-Sunday-Bold.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/9179Just-Sunday-Bold.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.just-sunday-bold{font-family: 'just-sunday-bold' !important;}
+
+						@font-face {
+					font-family: 'just-sunday';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/8131Just-Sunday.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/8131Just-Sunday.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.just-sunday{font-family: 'just-sunday' !important;}
+
+						@font-face {
+					font-family: 'gardenisa';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/9685Gardenisa.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/9685Gardenisa.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.gardenisa{font-family: 'gardenisa' !important;}
+
+						@font-face {
+					font-family: 'bartes-malaga';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/1233Bartes-Malaga.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/1233Bartes-Malaga.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.bartes-malaga{font-family: 'bartes-malaga' !important;}
+
+						@font-face {
+					font-family: 'geraldo-island';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/8814Geraldo-Island.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/8814Geraldo-Island.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.geraldo-island{font-family: 'geraldo-island' !important;}
+
+						@font-face {
+					font-family: 'scholastica';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/9370Scholastica.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/9370Scholastica.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.scholastica{font-family: 'scholastica' !important;}
+
+						@font-face {
+					font-family: 'charlotte-southern';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/3822Charlotte-Southern.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/3822Charlotte-Southern.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.charlotte-southern{font-family: 'charlotte-southern' !important;}
+
+						@font-face {
+					font-family: 'giava';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/702Giava.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/702Giava.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.giava{font-family: 'giava' !important;}
+
+						@font-face {
+					font-family: 'kuinca';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/4398KUINCA.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/4398KUINCA.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.kuinca{font-family: 'kuinca' !important;}
+
+						@font-face {
+					font-family: 'migrand';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/1147Migrand.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/1147Migrand.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.migrand{font-family: 'migrand' !important;}
+
+						@font-face {
+					font-family: 'modern-chengo';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/5765Modern-Chengo.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/5765Modern-Chengo.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.modern-chengo{font-family: 'modern-chengo' !important;}
+
+						@font-face {
+					font-family: 'gosten';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/6197Gosten.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/6197Gosten.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.gosten{font-family: 'gosten' !important;}
+
+						@font-face {
+					font-family: 'balmond';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/8560Balmond.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/8560Balmond.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.balmond{font-family: 'balmond' !important;}
+
+						@font-face {
+					font-family: 'balmond-outline';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/8435Balmond-Outline.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/8435Balmond-Outline.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.balmond-outline{font-family: 'balmond-outline' !important;}
+
+						@font-face {
+					font-family: 'delmone';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/9483DELMONE.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/9483DELMONE.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.delmone{font-family: 'delmone' !important;}
+
+						@font-face {
+					font-family: 'milenial';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/7697Milenial.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/7697Milenial.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.milenial{font-family: 'milenial' !important;}
+
+						@font-face {
+					font-family: 'rolate';
+					src: url('https://hi.inviee.id/wp-content/uploads/useanyfont/8919ROLATE.woff2') format('woff2'),
+						url('https://hi.inviee.id/wp-content/uploads/useanyfont/8919ROLATE.woff') format('woff');
+					   font-display: auto;
+				}
+
+				.rolate{font-family: 'rolate' !important;}
+
+		</style>
 `;
 
 // Fungsi untuk mengunduh file (mendukung file besar via streaming)//[cite: 3]
