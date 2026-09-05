@@ -4,14 +4,77 @@ const https = require('https');
 const http = require('http');
 const { URL } = require('url');
 
-const ALLOWED_DOMAINS = ["library.eltemplate.vip", "undanganhub.com","walimatul.id","web.galeriundanganofficial.com","lovelisseinvitation.my.id","zehaninv.id","rawcdn.githack.com"];////[cite: 3]
+const ALLOWED_DOMAINS = ["hi.inviee.id","library.eltemplate.vip", "undanganhub.com","walimatul.id","web.galeriundanganofficial.com","lovelisseinvitation.my.id","zehaninv.id","rawcdn.githack.com"];////[cite: 3]
 const IMAGE_EXTENSIONS = [];////[cite: 3]
 
 // Contoh HTML yang berisi gambar, CSS, JS, font, audio, hingga video
 const htmlContent = `
 
+<!-- CSS Links -->
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/css/modules/bdt-uikit.css?ver=3.15.1">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/css/modules/ep-helper.css?ver=3.2.1.5">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/jet-engine/assets/css/frontend.css?ver=3.8.14.3">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/eltemplate/public/css/eltemplate-public.css?ver=2.0.0">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/useanyfont/uaf.css?ver=1787245120">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/css/exad-styles.min.css?ver=7.0.4">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/css/new-icon.min.css?ver=3.2.1.5">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/themes/weddingsaas-wp/assets/css/reset.css?ver=2.1.0">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/css/wdp-copy-widget.css?ver=3.2.1.5">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/eveent/assets/css/ev-rsvp-style.css?ver=2.4.4">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/eveent/assets/css/ewf-barcode-style.css?ver=1780897927">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.53.0">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/css/post-1235.css?ver=1788409522">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/eltemplate/includes/widgets/css/frontend.css?ver=1">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/css/wdp.css?ver=3.2.1.5">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/css/guest-book.css?ver=3.2.1.5">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/css/post-287617.css?ver=1788409609">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/google-fonts/css/roboto.css?ver=1745682165">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/google-fonts/css/robotoslab.css?ver=1745682166">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/google-fonts/css/playfairdisplay.css?ver=1745682189">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/google-fonts/css/opensans.css?ver=1745686640">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/google-fonts/css/vidaloka.css?ver=1745686640">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/google-fonts/css/prata.css?ver=1745686641">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/google-fonts/css/cormorantinfant.css?ver=1745682187">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/eltemplate/includes/widgets/css/style.css?ver=1.0">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/eltemplate/includes/widgets/css/widget-image-box.min.css?ver=1.0">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/eltemplate/includes/widgets/css/widget-icon-box.min.css?ver=1.0">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/eltemplate/includes/widgets/css/widget-spacer.css?ver=1.0">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/plugins/eltemplate/includes/widgets/css/widget-video.css?ver=1.0">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/css/post-147102.css?ver=1788409524">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/google-fonts/css/dmsans.css?ver=1745682169">
+<link rel="stylesheet" href="https://hi.inviee.id/wp-content/uploads/elementor/google-fonts/css/publicsans.css?ver=1745682170">
 
-<div class="grid-container" id="gallery"><div class="card"><img src="https://rawcdn.githack.com/ajax-jquery/undanganhub-assets/1f22576063e9e4ff84eb89eb969177ac701a5208/sampel/cover/blue-serenade-basic.png" alt="blue-serenade-basic.png" loading="lazy"><div class="btn-container"><button class="btn-copy">Salin Link</button></div></div><div class="card"><img src="https://rawcdn.githack.com/ajax-jquery/undanganhub-assets/1f22576063e9e4ff84eb89eb969177ac701a5208/sampel/cover/blue-serenade.png" alt="blue-serenade.png" loading="lazy"><div class="btn-container"><button class="btn-copy">Salin Link</button></div></div><div class="card"><img src="https://rawcdn.githack.com/ajax-jquery/undanganhub-assets/1f22576063e9e4ff84eb89eb969177ac701a5208/sampel/cover/bugis-rojos-2026.png" alt="bugis-rojos-2026.png" loading="lazy"><div class="btn-container"><button class="btn-copy">Salin Link</button></div></div><div class="card"><img src="https://rawcdn.githack.com/ajax-jquery/undanganhub-assets/1f22576063e9e4ff84eb89eb969177ac701a5208/sampel/cover/flora-green.png" alt="flora-green.png" loading="lazy"><div class="btn-container"><button class="btn-copy">Salin Link</button></div></div><div class="card"><img src="https://rawcdn.githack.com/ajax-jquery/undanganhub-assets/1f22576063e9e4ff84eb89eb969177ac701a5208/sampel/cover/galactic-ruins.png" alt="galactic-ruins.png" loading="lazy"><div class="btn-container"><button class="btn-copy">Salin Link</button></div></div><div class="card"><img src="https://rawcdn.githack.com/ajax-jquery/undanganhub-assets/1f22576063e9e4ff84eb89eb969177ac701a5208/sampel/cover/gold-2026.png" alt="gold-2026.png" loading="lazy"><div class="btn-container"><button class="btn-copy">Salin Link</button></div></div><div class="card"><img src="https://rawcdn.githack.com/ajax-jquery/undanganhub-assets/1f22576063e9e4ff84eb89eb969177ac701a5208/sampel/cover/jawa-red.png" alt="jawa-red.png" loading="lazy"><div class="btn-container"><button class="btn-copy">Salin Link</button></div></div><div class="card"><img src="https://rawcdn.githack.com/ajax-jquery/undanganhub-assets/1f22576063e9e4ff84eb89eb969177ac701a5208/sampel/cover/obsidian-elegance.png" alt="obsidian-elegance.png" loading="lazy"><div class="btn-container"><button class="btn-copy">Salin Link</button></div></div><div class="card"><img src="https://rawcdn.githack.com/ajax-jquery/undanganhub-assets/1f22576063e9e4ff84eb89eb969177ac701a5208/sampel/cover/suci-2026.png" alt="suci-2026.png" loading="lazy"><div class="btn-container"><button class="btn-copy">Salin Link</button></div></div></div>
+<!-- JavaScript Files -->
+<script src="https://hi.inviee.id/wp-content/plugins/eltemplate/public/js/eltemplate-public.js?ver=2.0.0"></script>
+<script src="https://hi.inviee.id/wp-includes/js/dist/vendor/react.min.js?ver=18.3.1.1"></script>
+<script src="https://hi.inviee.id/wp-includes/js/dist/vendor/react-dom.min.js?ver=18.3.1.1"></script>
+<script src="https://hi.inviee.id/wp-includes/js/dist/escape-html.min.js?ver=3f093e5cca67aa0f8b56"></script>
+<script src="https://hi.inviee.id/wp-includes/js/dist/element.min.js?ver=15ba804677f72a8db97b"></script>
+<script src="https://hi.inviee.id/wp-content/plugins/eltemplate/admin/js/license.min.js?ver=2.0.0"></script>
+<script src="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/js/wdp-swiper.min.js"></script>
+<script src="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/js/qr-code.js"></script>
+<script src="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/js/exad-scripts.min.js?ver=3.2.1.5"></script>
+<script src="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/js/license.min.js?ver=3.2.1.5"></script>
+<script src="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/js/wdp-copy-widget.js?ver=3.2.1.5"></script>
+<script src="https://hi.inviee.id/wp-content/plugins/eveent/assets/js/ev-rsvp-handler.js?ver=1780897927"></script>
+<script src="https://hi.inviee.id/wp-content/plugins/eveent/assets/js/ewf-barcode-handler.js?ver=1780897927"></script>
+<script src="https://hi.inviee.id/wp-content/plugins/eveent/assets/js/ewf-download-handler.js?ver=2.4.4"></script>
+<script src="https://hi.inviee.id/wp-content/plugins/eltemplate/includes/widgets/js/widget-video.js?ver=2.0.0"></script>
+<script src="https://hi.inviee.id/wp-content/plugins/eltemplate/includes/widgets/js/script.js?ver=1.0"></script>
+<script src="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/js/modules/bdt-uikit.js?ver=3.15.1"></script>
+<script src="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/js/wdp.min.js?ver=3.2.1.5"></script>
+<script src="https://hi.inviee.id/wp-content/plugins/weddingpress/assets/js/guest-form.js?ver=3.2.1.5"></script>
+
+<!-- Images -->
+<img src="https://hi.inviee.id/wp-content/uploads/2026/07/Velvet-Garden-Icon.webp" alt="">
+<img src="https://hi.inviee.id/wp-content/uploads/2026/03/bunga-tema-2-HvOzRp.webp" alt="">
+<img src="https://hi.inviee.id/wp-content/uploads/2026/07/Velvet-Garden-Bunga.webp" alt="">
+<img src="https://hi.inviee.id/wp-content/uploads/2024/12/chip-atm1.webp" alt="">
+<img src="https://hi.inviee.id/wp-content/uploads/2026/07/Velvet-Garden-Icon.webp" alt="">
+<img src="https://hi.inviee.id/wp-content/uploads/2026/03/bunga-tema-2-HvOzRp.webp" alt="">
+
+<!-- JSON / Lottie Files -->
+<link rel="preload" href="https://hi.inviee.id/wp-content/uploads/2024/08/lottie-mouse-black.json" as="fetch" type="application/json">
 
 `;
 
