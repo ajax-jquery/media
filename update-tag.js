@@ -10,7 +10,6 @@ function updateConfigByTag() {
     console.log('Mengecek tag dan perubahan direktori lokal...');
 
     // 1. Ambil Git Tag terbaru dari repository lokal
-    // Jika belum pernah ada tag, otomatis menggunakan 'v1.0.0'
     let latestTag = 'v1.0.0';
     try {
       latestTag = execSync('git describe --tags --abbrev=0').toString().trim();
@@ -20,51 +19,40 @@ function updateConfigByTag() {
     console.log(`Tag terbaru: ${latestTag}`);
 
     // 2. Deteksi file/folder apa saja yang berubah di commit terakhir
-    // Menggunakan git diff dari HEAD sebelumnya ke HEAD saat ini
     const changedFiles = execSync('git diff --name-only HEAD~1 HEAD').toString().trim().split('\n');
     
-    const isTema00Changed = changedFiles.some(file => file.startsWith('tema00/'));
-    const isTema01Changed = changedFiles.some(file => file.startsWith('tema01/'));
-    const isTema02Changed = changedFiles.some(file => file.startsWith('tema02/'));
+    // 3. Deteksi otomatis folder "tema" yang berubah menggunakan Regex
+    const changedThemes = new Set();
+    changedFiles.forEach(file => {
+      // Mencocokkan awalan "tema" yang diikuti angka (misal: tema00, tema03)
+      const match = file.match(/^(tema\d+)\//); 
+      if (match) {
+        changedThemes.add(match[1]);
+      }
+    });
 
-    // 3. Baca config.js yang sudah ada agar data tema yang TIDAK berubah tetap aman
-    let currentConfig = {};
-    if (fs.existsSync(TARGET_PATH)) {
-      // Meng-import objek config yang sudah ada
-      currentConfig = require(TARGET_PATH);
-    } else {
-      // Jika file belum ada, inisialisasi dengan data kosong
-      currentConfig = { tema00: "", tema01: "", tema02: "" };
-    }
-
-    // 4. Perbarui nilai tag JIKA folder tersebut mengalami perubahan
-    let isUpdated = false;
-    if (isTema00Changed) {
-      currentConfig["tema00"] = latestTag;
-      console.log('-> Update terdeteksi pada tema00. Menerapkan tag...');
-      isUpdated = true;
-    }
-    if (isTema01Changed) {
-      currentConfig["tema01"] = latestTag;
-      console.log('-> Update terdeteksi pada tema01. Menerapkan tag...');
-      isUpdated = true;
-    }
-    if (isTema02Changed) {
-      currentConfig["tema02"] = latestTag;
-      console.log('-> Update terdeteksi pada tema02. Menerapkan tag...');
-      isUpdated = true;
-    }
-
-    if (!isUpdated) {
-      console.log('Tidak ada perubahan pada folder tema00, tema01, atau tema02 di commit terakhir.');
+    if (changedThemes.size === 0) {
+      console.log('Tidak ada perubahan pada folder tema di commit terakhir.');
       return; // Berhenti jika tidak ada folder tema yang berubah
     }
 
-    // 5. Tulis ulang file config.js
-    let fileContent = 'module.exports = {\n';
-    for (const [key, value] of Object.entries(currentConfig)) {
-      fileContent += `  "${key}": "${value}",\n`;
+    // 4. Baca config.js yang sudah ada
+    let currentConfig = {};
+    if (fs.existsSync(TARGET_PATH)) {
+      currentConfig = require(TARGET_PATH);
     }
+
+    // 5. Perbarui nilai tag secara dinamis hanya untuk tema yang berubah
+    changedThemes.forEach(tema => {
+      currentConfig[tema] = latestTag;
+      console.log(`-> Update terdeteksi pada ${tema}. Menerapkan tag...`);
+    });
+
+    // 6. Tulis ulang file config.js (diurutkan berdasarkan abjad agar rapi)
+    let fileContent = 'module.exports = {\n';
+    Object.keys(currentConfig).sort().forEach(key => {
+      fileContent += `  "${key}": "${currentConfig[key]}",\n`;
+    });
     fileContent += '};\n';
 
     fs.writeFileSync(TARGET_PATH, fileContent, 'utf8');

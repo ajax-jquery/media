@@ -1,0 +1,882 @@
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgl4-rgjqfmvt7p8fur0q1j-hf1bkxdljrlfy9gmg.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgl4-rgjqfmvt7p8fur0q1j-hf1bkxdljrcfy9gmg.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgl4-rgjqfmvt7p8fur0q1j-hf1bkxdljrkfy9gmg.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgl4-rgjqfmvt7p8fur0q1j-hf1bkxdljrffy9gmg.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgl4-rgjqfmvt7p8fur0q1j-hf1bkxdljrjfy9gmg.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgl4-rgjqfmvt7p8fur0q1j-hf1bkxdljrify9gmg.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgl4-rgjqfmvt7p8fur0q1j-hf1bkxdljrgfy8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdxizrp6p7c-4.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdxizrnqp7c-4.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdxizrpqp7c-4.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdxizrmap7c-4.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdxizrpap7c-4.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdxizrpkp7c-4.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdxizrmqp7.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgn4-rgjqfmvt7p8fur0q1j-hf1bkxv-aredys.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgn4-rgjqfmvt7p8fur0q1j-hf1bkxv8qredys.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgn4-rgjqfmvt7p8fur0q1j-hf1bkxv-qredys.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgn4-rgjqfmvt7p8fur0q1j-hf1bkxv9gredys.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgn4-rgjqfmvt7p8fur0q1j-hf1bkxv-gredys.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgn4-rgjqfmvt7p8fur0q1j-hf1bkxv-wredys.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgn4-rgjqfmvt7p8fur0q1j-hf1bkxv9qre.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdbidrp6p7c-4.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdbidrnqp7c-4.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdbidrpqp7c-4.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdbidrmap7c-4.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdbidrpap7c-4.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdbidrpkp7c-4.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdbidrmqp7.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdtifrp6p7c-4.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdtifrnqp7c-4.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdtifrpqp7c-4.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdtifrmap7c-4.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdtifrpap7c-4.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdtifrpkp7c-4.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxdtifrmqp7.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxduijrp6p7c-4.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxduijrnqp7c-4.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxduijrpqp7c-4.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxduijrmap7c-4.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxduijrpap7c-4.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxduijrpkp7c-4.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxduijrmqp7.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxddinrp6p7c-4.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxddinrnqp7c-4.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxddinrpqp7c-4.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxddinrmap7c-4.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxddinrpap7c-4.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxddinrpkp7c-4.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgk4-rgjqfmvt7p8fur0q1j-hf1bkxddinrmqp7.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgn4-rgjqfmvt7p8fur0q1j-hf1dipv-aredys.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgn4-rgjqfmvt7p8fur0q1j-hf1dipv8qredys.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgn4-rgjqfmvt7p8fur0q1j-hf1dipv-qredys.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgn4-rgjqfmvt7p8fur0q1j-hf1dipv9gredys.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgn4-rgjqfmvt7p8fur0q1j-hf1dipv-gredys.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgn4-rgjqfmvt7p8fur0q1j-hf1dipv-wredys.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgn4-rgjqfmvt7p8fur0q1j-hf1dipv9qre.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dujh4i5hmlj_.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dujh4idhmlj_.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dujh4i9hmlj_.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dujh4ibhmlj_.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dujh4ixhmlj_.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dujh4i1hmlj_.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dujh4inhma.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgh4-rgjqfmvt7p8fur0q1j-hf1bkrl9xxa.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgh4-rgjqfmvt7p8fur0q1j-hf1bk1l9xxa.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgh4-rgjqfmvt7p8fur0q1j-hf1bkvl9xxa.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgh4-rgjqfmvt7p8fur0q1j-hf1bkpl9xxa.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgh4-rgjqfmvt7p8fur0q1j-hf1bkzl9xxa.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgh4-rgjqfmvt7p8fur0q1j-hf1bkdl9xxa.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgh4-rgjqfmvt7p8fur0q1j-hf1bkll9w.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1drpg4i5hmlj_.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1drpg4idhmlj_.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1drpg4i9hmlj_.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1drpg4ibhmlj_.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1drpg4ixhmlj_.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1drpg4i1hmlj_.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1drpg4inhma.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dvja4i5hmlj_.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dvja4idhmlj_.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dvja4i9hmlj_.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dvja4ibhmlj_.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dvja4ixhmlj_.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dvja4i1hmlj_.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dvja4inhma.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1du5d4i5hmlj_.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1du5d4idhmlj_.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1du5d4i9hmlj_.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1du5d4ibhmlj_.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1du5d4ixhmlj_.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1du5d4i1hmlj_.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1du5d4inhma.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dspc4i5hmlj_.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dspc4idhmlj_.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dspc4i9hmlj_.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dspc4ibhmlj_.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dspc4ixhmlj_.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dspc4i1hmlj_.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans SC';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://walimatul.id/wp-content/uploads/elementor/google-fonts/fonts/alegreyasanssc-mtgm4-rgjqfmvt7p8fur0q1j-hf1dspc4inhma.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
